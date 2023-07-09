@@ -1,0 +1,140 @@
+2023/07/01
+
+	Docker上で、新たにryu95-appとして
+	laravel10で構築。templeMastaから制作を開始。
+	今まで作って来たファイル類で、Services,Repository,Request,Controllerをまず作成した。
+
+0702
+	docker上の不要になったファイルを整理したらsailのショートカットが効かなくなったので再度docker,wsl2,laravel,breezeをインストール。
+
+	breezeをcomposer requireし、installすると途中でREACTやInertia等が必要か聞いてくるのでyesと答えるとteilWind.config.js,postcss.config.jsも含めて必要なものがすべてインストールされて便利。
+
+0703(月)
+
+	まずtempleMasta.phpを仕上げるべく、フロントをtailWindcssとUIにprelineを
+	選んでインストール。npm run build するもエラー。postcss.configの記述を以下のように訂正してBuildが通った。
+	朝からこんな感じなのはむしろ平常運転。
+
+	2.上記のsail npm buildでエラー。
+		postcss.configの配置場所がおかしいと出ているので、resources/js　に置いたら
+		エラーはでなくなった。
+
+	3.prelineUiからcss　ソースをコピペしたが、正常に表示されない。vscode上の
+		explorerでnode_modulesとその中身のファイルが全部グレー文字になっていて
+		どうやらこれはgitで管理されていない状況のよう。gitIgnorファイルで上記ディレクトリを#でコメントアウトする。グレー表示が白になった。
+		しかしながらサイトの表示崩れは治らない。どこかリンクが外れているか足りないのだと思う。
+
+	4.app.css　の@teilWindディレクティブを以下のように修正した
+		@import '~tailwindcss/base';
+		@import '~tailwindcss/components';
+		@import '~tailwindcss/utilities';
+		今のところ結果に変化なし
+
+	5.postcss.config.jsをpostcss.config.cjsにリネームし
+		内容を
+		module.exports = ({ env }) => ({ 
+			plugins: [ require('tailwindcss')(), 
+						require('autoprefixer')() ] })
+
+		に変更した。
+
+		@tailwind baseとは
+		node_modules/tailwindcss/dist/base.cssの事で
+		normalize.cssという実態のようだが
+		それがインストールされていないようだ。components,utilitiesについても
+		同様と推察する。
+
+	6.16:00現在、何も解決しないので、tailWindcssからBootstrapに変更しようと思う。
+		それにしても様子がおかしいので、Docker事再インストールする。
+
+7. 19:00チグサウェブさんはsail環境で進めてくれているので、それを参考に
+再度laravel,vite,npmをインストールしたところ、先ほどは無かった/node_modules/teilwind.css/base.css,component.cssその他重要なファイルがインストールされた。
+
+8.20:55 teilWindcssの導入には成功した。
+	PrelineUIは何かファイルが足りていないようだ。
+	index.blade.phpの頭で
+	<script src="./node_modules/preline/dist/hs-ui.bundle.js"></script>
+	とあるが、dist/hs-ui.bundle.js"が見当たらないようだ。明日は11:00からPM案	件の面談なので今日はこのへんで。
+
+	↑フルパスで確認する。
+
+7/5
+	昨日はさんざんだった。11:00からの面談が13:00からともう一本元受けのと私と同時に受ける人とで14:30からの2本なったのは良いけれど、結局お見送り。それは想定内だっ
+	たがレバさんの福島さん自体から一旦お見送りと言われてしまい途方にくれる始末。
+
+	それはさておき、tailwindcssも動いていないようだ。どこか設定の問題と思うが、
+	<h1 class="text-xl bg-red-500 font-bold underline">
+		Hello sousaikun!!
+	とか当てたcssが反映していない。
+
+	2.14:18
+
+		Docker上のlaravelごと再インストールする
+
+	3.tailwindcss, prelineと進むが正常に表示されず。
+
+	4. 15:39
+
+		こちらを参考に
+		https://chigusa-web.com/blog/laravel-bootstrap/
+		Bootstrapにて表示に成功した。
+
+		たしか以前はviewファイルを更新するとブラウザが自動でリロードをしてくれたが
+		それが動いておらず、自分でリロードボタンを押す状況。そこはviteがやっていると思っていたがinertiaかREACTのようだ。
+
+	5. 16:36
+		外国の方のブログを参考にBootstrapのテンプレの導入を図るも
+			vite.config.jsの	
+
+			import { defineConfig } from 'vite';
+			import laravel from 'laravel-vite-plugin';
+
+		の記述がなかったせいか動かない...
+
+	6.17:00　どうもtailWindcssが動かないのもbootStrapが動かないのも同じ理由なのか...	さっぱり動かない。
+
+		その多分1つの原因を解決すれば両方とも動くように感じる。
+
+	7.17:30
+		上記の理由で、Docker,laravelからインストールやり直し。
+
+	8.18:30
+		なんとかすこひさんのブログを参考にdocker.laravel.breezeを再度インストール
+
+230706
+
+	1.8:30
+		昨日構築した環境でやっとフロントが正常に表示されるようになった。
+		tailwindUIという有料のもの(のデモ)が成功しそのままその他のものやpreline		も表示は成功。ただJS周りは設定していないせいか動かない。
+		そうさい君の見積請求のテーブルはprelineのtablesのSalesというテンプレート	があっていると感じる。
+		Invoices　というテーブルは入金管理そのものである。(W)
+
+	2.	13:15　鵜の岬にて
+		tailWindcssのプラグインをコピペして、ほとんどのsampleが正常に表示される		が、JSの部分が動かないのは、また何か設定の違いがあるのだろう。
+
+		前回までのController,Request,repositores,Model,Serviceをインストールした	のでgitに同期しようとしたが、gitのアカウント上で新たなRepositorieを作れ		ない。
+
+	3.	Docker上のターミナルで(Do You Capten?)という怪しげな表示が出た後
+		sailが使えなくなった。
+
+	4. 16:10
+		上記の現象はどうやらDocker上の./bendor/bin/sail up のエイリアスが無効になっていたのが原因っぽい。再度エイリアスを作ったら解決したがgitが原因でな		いと良いが....
+
+	5. 16:25
+		gitを含めて開発環境が整ったようだ(やっと)
+
+230707
+	1.12:12
+		templeMastaの一覧の表示に成功した。今後このbladeをテンプレートとしてplace系Mastaを
+		作る
+	
+	2.17:05
+		viewのpagenateの導入中。だが、$temple::latest()->でエラー。内容をみると
+		Unknown column `created_at`とあるのでそのフィールドを見てorderしているようだ。
+		多分それはどこかで例えばorder列とかに変更を指定できるはず。
+		repositoryでEroquentではなくてDBファサードでフィールドを指定した方がも良いのかも。
+
+	3.19:07
+		viewについて見積・請求テンプレ以外のMastaはすべてblade + tailWindで書く。
+		単純系・場所系・その他の共通のviewを作る。
+		viewのpagenateの導入が済んだら、パンくずリストも入れる。
