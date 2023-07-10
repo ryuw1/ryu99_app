@@ -135,6 +135,57 @@
 		repositoryでEroquentではなくてDBファサードでフィールドを指定した方がも良いのかも。
 
 	3.19:07
-		viewについて見積・請求テンプレ以外のMastaはすべてblade + tailWindで書く。
-		単純系・場所系・その他の共通のviewを作る。
-		viewのpagenateの導入が済んだら、パンくずリストも入れる。
+		※viewについて見積・請求テンプレ以外のMastaはすべてblade + tailWindで書く。
+		※単純系・場所系・その他の共通のviewを作る。
+		※viewのpagenateの導入が済んだら、パンくずリストも入れる。
+
+230709
+	1.	※リクエストのruleについてマスタの単純系・場所系等のグループごとにRulesファイルを作って読み込む形が可能か試す。
+
+	2. 12:51 
+		paginateの導入で2時間ほど躓く。調子の良くない時はカンが全く働かないので、今日は終わりにした方が良さそうだ。
+			templeModelとルートshowでのviewの{{ links}}　記述をいったん元に戻す。
+
+	3. 17:22
+		上記をTempleRepository.phpの頭で
+			    public function getAll()
+    				{
+     			   //return $this->model->all();
+        			return $this->model->paginate(5);
+    				}
+		としたところ、表示に成功。
+	4. 17:42
+		viewでエラーが出ていたが、
+			{{ $temple->links() }}
+			から
+			{{ $temples->links() }}
+			に変更して解決。
+
+			→　{{ 変数名（複数形）->links() }}
+
+			Showing 1 to 10 of 309 results
+			の所を日本語にして今どこに居るかの表示を
+			じゅんこさんのページを参考にして修正し、パンくず
+			リストを追加して一旦完成。
+
+20230710
+	1. 	11:08 
+		{{ $temples->links() }}
+		から{{ $temples->appends(request()->query())->links() }}とする事で
+		検索条件を保持したままページング出来るらしい。
+		※まだ未検証
+
+	2.　12:34
+		順子さんのサイトを参考に、paginaterのteilWindcssをコマンドからbuidし、teilwind.blade.php
+		をtailwind2.blade.cssにリネームして今居るところをわかりやすく表示して
+		英語の部分をxx件中xx件目からxx件目まで、と修正した。
+
+	3. 13:59
+		git のSSH keyをリモートリポジトリでは設定できるがローカルでは、キーペアの保存先が
+		home/juliaに固定されたままで動かせない為うまく行かない。
+		juliaはjulia@ryuw1のものと同じと思うので、どこかのUserの設定と相関があるように思う。
+
+	4.	14:35
+		パンくずリストの導入。	
+		COMPOSER_MEMORY_LIMIT=-1 composer require diglactic/laravel-breadcrumbs
+		でパッケージインストールをやり直す。

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Mastas;
-
+use App\Models\Mastas\TempleModel;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTempleModelRequest;
 use App\Http\Requests\UpdateTempleModelRequest;
@@ -10,7 +10,6 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
-use Illuminate\Pagenation\Paginator;
 
 class TempleController extends Controller
 {
@@ -18,11 +17,13 @@ class TempleController extends Controller
      * Display a listing of the resource.
      */
     protected $templeService;
+
     public function index(TempleService $templeService)
     {
         
         $temples = $templeService->getAll();
         return view('temple', compact('temples'));
+    }
         /*
         $temples = $temple::latest()->paginate(5);
         
@@ -41,14 +42,14 @@ class TempleController extends Controller
         return redirect()->route('temple.index')
                         ->with('success','temple created successfully.');
     }
-*/
+
     }
-    public function show(TempleService $templeModel)
+    public function show(TempleModel $templeModel)
     {
-        $templeService = TempleService::paginate(10);
-        return view('temple', compact('templeService'));
+        $temples = $templeModel;
+
+        return view('temple', compact('temples'));
     }
-/*
     public function edit(TempleService $templeModel)
     {
         //
@@ -73,4 +74,3 @@ class TempleController extends Controller
     }
 */
 }
-//}

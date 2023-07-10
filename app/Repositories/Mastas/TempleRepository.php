@@ -1,7 +1,7 @@
 <?php
 namespace App\Repositories\Mastas;
-
 use App\Models\Mastas\TempleModel;
+use Illuminate\Pagenation\Paginator;
 
 class TempleRepository
 {
@@ -17,7 +17,8 @@ class TempleRepository
     // データベース操作に関するメソッドを追加
     public function getAll()
     {
-        return $this->model->all();
+        //return $this->model->all();
+        return $this->model->paginate(10);
     }
 
     public function getById($id)

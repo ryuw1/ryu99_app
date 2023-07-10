@@ -143,7 +143,7 @@
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
                     <div class="flex items-center gap-x-2">
-                        {{$temple->temple_code}}
+                  {{$temple->id}}
                       </div>
                     </div>    
                 <td class="h-px w-px whitespace-nowrap">
@@ -184,5 +184,6 @@
             </tbody>
         </table>          
 <!-- End Table Section -->
+{{ $temples->appends(request()->query())->links('vendor.pagination.tailwind2') }}
 </body>
 </html>
