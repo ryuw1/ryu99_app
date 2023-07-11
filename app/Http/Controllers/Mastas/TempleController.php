@@ -5,7 +5,8 @@ use App\Models\Mastas\TempleModel;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTempleModelRequest;
 use App\Http\Requests\UpdateTempleModelRequest;
-use App\Services\Mastas\TempleService;
+use App\Repositories\Mastas\TempleRepository;
+//use App\Services\Mastas\TempleService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -18,24 +19,24 @@ class TempleController extends Controller
      */
     protected $templeService;
 
-    public function index(TempleService $templeService)
+    public function index(TempleRepository $templeRepository)
     {
         
-        $temples = $templeService->getAll();
+        $temples = $templeRepository->getAll();
         return view('temple', compact('temples'));
     }
-        /*
+        /*以下の文はTempleRepositoryに書いた
         $temples = $temple::latest()->paginate(5);
         
         return view('temple.index',compact('temples'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
         }
 
-    public function create()
+    public function create(TempleRepository $templeRepository))
     {
-        //
+        create(array $data)
     }
-
+*/
     public function store(StoreTempleModelRequest $request)
     {
         temple::create($request->all());

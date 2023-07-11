@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreTempleModelRequest extends FormRequest
+class StoreTempleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,7 @@ class StoreTempleModelRequest extends FormRequest
     {
         return [
             'id' => 'required',
-            'order' => 'required',
+            'name' => 'required',
         ];
     }
 }

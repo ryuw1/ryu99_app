@@ -1,6 +1,4 @@
 <?php
-// Home
-// Home
 /*
 Breadcrumbs::for('home', function ($trail) {
     $trail->push('ホーム', route('temple.index'));
@@ -11,7 +9,8 @@ Breadcrumbs::for('about', function ($trail) {
     $trail->push('このサイトについて', route('temple.show'));
 });
 */
- protected $newurls = $_SERVER['REQUEST_URI'];
+//$newurls = $_SERVER['REQUEST_URI'];
+/*
 function mks($newurls) {
     $url = parse_url($newurls);
     // QueryStringが不要なら、この時点で
@@ -23,17 +22,18 @@ function mks($newurls) {
     }
     
 $a = mks();
+*/
 // Home
 Breadcrumbs::for('home', function ($trail) {
-    $trail->push($a, route('temple.index'));
+    $trail->push('HOME', route('temple.index'));
 });
 // Home > About
 Breadcrumbs::for('about', function ($trail) {
     $trail->parent('home');
-    $trail->push('このサイトについて', route('temple.show'));
+    $trail->push('マスタ管理', route('temple.index'));
 });
 // Home > About > About2
 Breadcrumbs::for('about2', function ($trail) {
     $trail->parent('about');
-    $trail->push($a, route('temple.search'));
+    $trail->push('寺院マスタ', route('temple.index'));
 });

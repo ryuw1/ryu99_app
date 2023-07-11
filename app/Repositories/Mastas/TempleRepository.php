@@ -12,12 +12,9 @@ class TempleRepository
         {
             $this->model = $model;
         }
-    
-
     // データベース操作に関するメソッドを追加
     public function getAll()
     {
-        //return $this->model->all();
         return $this->model->paginate(10);
     }
 
