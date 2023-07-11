@@ -48,11 +48,11 @@ Route::prefix('temple/{id}')->group(function () {
     Route::delete('/temple/{id}', [TempleController::class, 'destroy'])->name('temple.destroy');
 });
 */
-Route::prefix('/temple')->group(function() {
+Route::prefix('/mastas/temple')->group(function() {
     // temple/search
-        //Route::get('search', [UserController::class, 'search']);
+        Route::get('search', [UserController::class, 'search'])->name('temple.search');
       
-        Route::get('/', [TempleController::class, 'index'])->name('temple.index');
+        Route::get('/index', [TempleController::class, 'index'])->name('temple.index');
         Route::get('/show', [TempleController::class, 'show'])->name('temple.show');
             Route::post('/store/{id}', [TempleController::class, 'store'])->name('temple.store');
             Route::get('/update/{id}', [TempleController::class, 'update'])->name('temple.update');

@@ -26,7 +26,7 @@
   }
   ```
 -->
-
+{{ Breadcrumbs::render('about2') }}
   <body class="h-full">
     <body class="antialiased">
        <!-- Table Section -->
