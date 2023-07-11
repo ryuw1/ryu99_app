@@ -207,3 +207,5 @@
 		caccoの図では当初RuleについてInterfaceを使う予定だったが、一旦個別のRequestファイルに
 		必要なRuleを書く事にする。index,show,destroyにはRuleは必要ないので
 		そんなに抽象化にこだわる必要もないように思う。
+
+	
