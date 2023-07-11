@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Mastas;
+
 use App\Models\Mastas\TempleModel;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreTempleModelRequest;
-use App\Http\Requests\UpdateTempleModelRequest;
+use App\Http\Requests\Mastas\StoreTempleRequest;
+use App\Http\Requests\Mastas\UpdateTempleRequest;
 use App\Repositories\Mastas\TempleRepository;
 //use App\Services\Mastas\TempleService;
 use Illuminate\Http\RedirectResponse;
@@ -14,40 +15,30 @@ use Illuminate\View\View;
 
 class TempleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     protected $templeService;
 
     public function index(TempleRepository $templeRepository)
-    {
-        
-        $temples = $templeRepository->getAll();
+        {
+            $temples = $templeRepository->getAll();
         return view('temple', compact('temples'));
-    }
-        /*以下の文はTempleRepositoryに書いた
-        $temples = $temple::latest()->paginate(5);
-        
-        return view('temple.index',compact('temples'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        }
+        //create=登録画面を呼び出し、storeメソッドを呼ぶ
+    public function create(StoreTempleRequest $request)
+        {
+        create(array $data)
         }
 
-    public function create(TempleRepository $templeRepository))
-    {
-        create(array $data)
-    }
-*/
     public function store(StoreTempleModelRequest $request)
-    {
+        {
         temple::create($request->all());
         return redirect()->route('temple.index')
                         ->with('success','temple created successfully.');
-    }
+        }
 
-    }
-    public function show(TempleModel $templeModel)
+    
+    public function show(TempleService $templeService)
     {
-        $temples = $templeModel;
+        $temples = $templeService;
 
         return view('temple', compact('temples'));
     }
@@ -73,5 +64,4 @@ class TempleController extends Controller
     {
         //
     }
-*/
 }
