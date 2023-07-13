@@ -222,3 +222,27 @@
 
 	6.　ルーターのメソッド(POST,PUT,PATCH等)の意味は、一覧画面、詳細表示画面等、細かい画面推移毎に
 		定義されている事を知る。また、validateを1つのファイルにまとめた例もあったので参考にしよう。	
+
+20230713
+	1. 16:40
+		ルーターで、resourceメソッドを使うと
+			Route::get   ('/test',              'TestController@index');
+			Route::get   ('/test/create',       'TestController@create');
+			Route::post  ('/test',              'TestController@store');
+			Route::get   ('/test/{test}',       'TestController@show');
+			Route::get   ('/test/{test}/edit',  'TestController@edit');
+			Route::put   ('/test/{test}',       'TestController@update'); 
+			Route::patch ('/test/{test}',       'TestController@update'); 
+			Route::delete('/test/{test}',       'TestController@destroy');
+		を
+			Route::resource('test', 'TestController');
+		の一行で済むらしいので、これを取り入れる事にする。
+
+			HTTPメソッド	URI					アクション		名前付きルート
+			GET				/test				index			test.index
+			GET				/test/create		create			test.create
+			POST			/test				store			test.store
+			GET				/test/{test}		show			test.show
+			GET				/test/{test}/edit	edit			test.edit
+			PUT/PATCH		/test/{test}		update			test.update
+			DELETE			/test/{test}		destroy			test.destroy
