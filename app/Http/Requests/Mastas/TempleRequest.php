@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Mastas;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreTempleRequest extends FormRequest
+class TempleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

@@ -261,3 +261,11 @@
 		temple.blade.phpで、paginateの部分やらに今まで出ていなかったエラーが出て動かない。
 		取り合えずpaginateの部分を外して、CRUDを先に仕上げる事にする。create,edit共通かつplace系
 		共通のviewとして placeCreateEdit.bladeを作る。
+
+	2. 12:53
+		viewのコンポーネント機能を使うので、resource/view/に/components/mastasディレクトリを作り
+		そこにplace.blde.php,placeCreateUpdate.blade.php(詳細表示と編集用の画面)を作った。
+
+	3. 13:21
+		一旦トイレ休憩で、PCの電源を切って再度作業を開始したら、viewに出ていた様々なエラーが勝手に解決していた。
+		キャッシュクリアしても治らなかったのになぁ...

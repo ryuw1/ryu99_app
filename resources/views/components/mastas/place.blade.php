@@ -40,7 +40,7 @@
           <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-gray-700">
             <div>
               <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                寺院マスタ
+                マスタ
               </h2>
             </div>
 
@@ -148,7 +148,7 @@
                     </div>    
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                  {{$temple->display_order}}
+                  {{$place->display_order}}
                   </div>
                 </td>
                     </div>
@@ -184,6 +184,6 @@
             </tbody>
         </table>          
 <!-- End Table Section -->
-{{ $temples->appends(request()->query())->links('vendor.pagination.tailwind2') }}
+
 </body>
 </html>

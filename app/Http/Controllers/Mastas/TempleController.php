@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Mastas;
 
 use App\Models\Mastas\TempleModel;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Mastas\StoreTempleRequest;
-use App\Http\Requests\Mastas\UpdateTempleRequest;
+use App\Http\Requests\Mastas\TempleRequest;
+//use App\Http\Requests\Mastas\UpdateTempleRequest;
 use App\Repositories\Mastas\TempleRepository;
 //use App\Services\Mastas\TempleService;
 use Illuminate\Http\RedirectResponse;
@@ -23,12 +23,12 @@ class TempleController extends Controller
         return view('mastas/temple', compact('temples'));
         }
         //create=登録画面を呼び出し、storeメソッドを呼ぶ
-    public function create(StoreTempleRequest $request)
+    public function create(TempleRequest $request)
         {
         //create(array $data)
         }
 
-    public function store(StoreTempleModelRequest $request)
+    public function store(TempleRequest $request)
         {
         temple::create($request->all());
         return redirect()->route('temple.index')
