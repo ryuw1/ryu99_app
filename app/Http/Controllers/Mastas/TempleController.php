@@ -20,12 +20,12 @@ class TempleController extends Controller
     public function index(TempleRepository $templeRepository)
         {
             $temples = $templeRepository->getAll();
-        return view('temple', compact('temples'));
+        return view('mastas/temple', compact('temples'));
         }
         //create=登録画面を呼び出し、storeメソッドを呼ぶ
     public function create(StoreTempleRequest $request)
         {
-        create(array $data)
+        //create(array $data)
         }
 
     public function store(StoreTempleModelRequest $request)

@@ -47,6 +47,10 @@ Route::prefix('/mastas/temple/')->group(function () {
     Route::patch('/temple/{id}', [TempleController::class, 'update'])->name('temple.update');
     Route::delete('/temple/{id}', [TempleController::class, 'destroy'])->name('temple.destroy');
 });
+
+//20230713 resourceとホワイトリストとを使った方法
+//Route::resource('temple', 'TempleController', ['only' => ['index', 'create', 'edit', 'store', 'destroy']]);
+
 /*
 Route::prefix('/mastas/temple')->group(function() {
         Route::get('search', [UserController::class, 'search'])->name('temple.search');

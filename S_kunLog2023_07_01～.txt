@@ -246,3 +246,18 @@
 			GET				/test/{test}/edit	edit			test.edit
 			PUT/PATCH		/test/{test}		update			test.update
 			DELETE			/test/{test}		destroy			test.destroy
+
+	3.	17:20
+		temple.bladeで、削除ボタンの引数'id'の設定が正しく無いですよ、とのエラー。
+		syntax error, unexpected identifier "id", expecting ")"	
+
+	4. 21:35
+		resourceルーターの使い方がいまいち分からない(詳細な説明が見つからないので、一旦通常の書き方で進めようかしら....
+
+	20230714 
+	1. 12:15
+		11:00に鵜の岬に着き、岬丼をいただいて、車の充電をしながら。
+
+		temple.blade.phpで、paginateの部分やらに今まで出ていなかったエラーが出て動かない。
+		取り合えずpaginateの部分を外して、CRUDを先に仕上げる事にする。create,edit共通かつplace系
+		共通のviewとして placeCreateEdit.bladeを作る。
