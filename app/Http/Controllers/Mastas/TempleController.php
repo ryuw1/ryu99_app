@@ -16,16 +16,20 @@ use Illuminate\View\View;
 class TempleController extends Controller
 {
     protected $templeService;
+    protected $templeRepository;
 
     public function index(TempleRepository $templeRepository)
         {
+            /*
             $temples = $templeRepository->getAll();
         return view('mastas/temple', compact('temples'));
-        }
-        //create=登録画面を呼び出し、storeメソッドを呼ぶ
+    */
+    return view('components/base');    
+    }
+        //create=登録画面を呼び出し、storeメソッドを呼ぶ->登録と一覧画面同居なので不要?
     public function create(TempleRequest $request)
         {
-        //create(array $data)
+        return view('');
         }
 
     public function store(TempleRequest $request)

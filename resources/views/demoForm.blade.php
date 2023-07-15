@@ -198,18 +198,18 @@
   <div class="flex flex-col">
     <div class="-m-1.5 overflow-x-auto">
       <div class="p-1.5 min-w-full inline-block align-middle">
-        <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden dark:bg-slate-900 dark:border-gray-700">
+        <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
           <!-- Header -->
-          <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-gray-700">
+          <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200">
             <div>
-              <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
+              <h2 class="text-xl font-semibold text-gray-800">
                 Sales
               </h2>
             </div>
 
             <div>
               <div class="inline-flex gap-x-2">
-                <a class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-red-600 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-red-500 dark:focus:ring-offset-gray-800" href="#">
+                <a class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-red-600 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm" href="#">
                   <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                     <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
@@ -217,11 +217,11 @@
                   Delete (2)
                 </a>
 
-                <a class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800" href="#">
+                <a class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm" href="#">
                   View all
                 </a>
 
-                <a class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800" href="#">
+                <a class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm" href="#">
                   <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2.63452 7.50001L13.6345 7.5M8.13452 13V2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                   </svg>
@@ -233,19 +233,19 @@
           <!-- End Header -->
 
           <!-- Table -->
-          <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-            <thead class="bg-gray-50 dark:bg-slate-900">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
               <tr>
                 <th scope="col" class="pl-6 py-3 text-left">
                   <label for="hs-at-with-checkboxes-main" class="flex">
-                    <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-at-with-checkboxes-main">
+                    <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500" id="hs-at-with-checkboxes-main">
                     <span class="sr-only">Checkbox</span>
                   </label>
                 </th>
 
                 <th scope="col" class="px-6 py-3 text-left">
                   <div class="flex items-center gap-x-2">
-                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
                       Lead
                     </span>
                   </div>
@@ -253,7 +253,7 @@
 
                 <th scope="col" class="px-6 py-3 text-left">
                   <div class="flex items-center gap-x-2">
-                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
                       Next Meeting
                     </span>
                   </div>
@@ -261,7 +261,7 @@
 
                 <th scope="col" class="px-6 py-3 text-left">
                   <div class="flex items-center gap-x-2">
-                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
                       Last Interaction
                     </span>
                   </div>
@@ -269,7 +269,7 @@
 
                 <th scope="col" class="px-6 py-3 text-left">
                   <div class="flex items-center gap-x-2">
-                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
                       Email
                     </span>
                   </div>
@@ -277,7 +277,7 @@
 
                 <th scope="col" class="px-6 py-3 text-left">
                   <div class="flex items-center gap-x-2">
-                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
                       Rating
                     </span>
                   </div>
@@ -285,12 +285,12 @@
               </tr>
             </thead>
 
-            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+            <tbody class="divide-y divide-gray-200">
               <tr>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="pl-6 py-2">
                     <label for="hs-at-with-checkboxes-1" class="flex">
-                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-at-with-checkboxes-1" checked>
+                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500" id="hs-at-with-checkboxes-1" checked>
                       <span class="sr-only">Checkbox</span>
                     </label>
                   </div>
@@ -305,43 +305,43 @@
                         <path d="M16.6149 1.75927C16.0155 3.79729 14.3571 12.4089 14.0175 14.7466C14.0175 14.7466 21.9897 15.8456 28.5233 16.3251C25.1866 7.9932 16.6149 1.75927 16.6149 1.75927Z" fill="#7878FF"/>
                       </svg>
                       <div class="grow">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Guideline</span>
+                        <span class="text-sm text-gray-600">Guideline</span>
                       </div>
                     </div>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">In 2 days</span>
+                    <span class="text-sm text-gray-600">In 2 days</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">45 minutes ago</span>
+                    <span class="text-sm text-gray-600">45 minutes ago</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">
+                    <span class="text-sm text-gray-600">
                       amanda@site.com
                     </span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2 flex gap-x-1">
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-gray-300 dark:text-gray-700" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-gray-300" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
                   </div>
@@ -352,7 +352,7 @@
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="pl-6 py-2">
                     <label for="hs-at-with-checkboxes-2" class="flex">
-                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-at-with-checkboxes-2" checked>
+                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500" id="hs-at-with-checkboxes-2" checked>
                       <span class="sr-only">Checkbox</span>
                     </label>
                   </div>
@@ -372,43 +372,43 @@
                         </defs>
                       </svg>
                       <div class="grow">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Facebook</span>
+                        <span class="text-sm text-gray-600">Facebook</span>
                       </div>
                     </div>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">Yesterday 09:12 am</span>
+                    <span class="text-sm text-gray-600">Yesterday 09:12 am</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">In 1 hour</span>
+                    <span class="text-sm text-gray-600">In 1 hour</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">
+                    <span class="text-sm text-gray-600">
                       christina@site.com
                     </span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2 flex gap-x-1">
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
                   </div>
@@ -419,7 +419,7 @@
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="pl-6 py-2">
                     <label for="hs-at-with-checkboxes-3" class="flex">
-                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-at-with-checkboxes-3">
+                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500" id="hs-at-with-checkboxes-3">
                       <span class="sr-only">Checkbox</span>
                     </label>
                   </div>
@@ -440,43 +440,43 @@
                         </defs>
                       </svg>
                       <div class="grow">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Mailchimp</span>
+                        <span class="text-sm text-gray-600">Mailchimp</span>
                       </div>
                     </div>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">Monday 12:12 pm</span>
+                    <span class="text-sm text-gray-600">Monday 12:12 pm</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">In 3 days</span>
+                    <span class="text-sm text-gray-600">In 3 days</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">
+                    <span class="text-sm text-gray-600">
                       brian@site.com
                     </span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2 flex gap-x-1">
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
                   </div>
@@ -487,7 +487,7 @@
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="pl-6 py-2">
                     <label for="hs-at-with-checkboxes-4" class="flex">
-                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-at-with-checkboxes-4">
+                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500" id="hs-at-with-checkboxes-4">
                       <span class="sr-only">Checkbox</span>
                     </label>
                   </div>
@@ -499,43 +499,43 @@
                         <path d="M27.2192 10.9088C27.0336 11.0528 23.7568 12.8992 23.7568 17.0048C23.7568 21.7536 27.9264 23.4336 28.0512 23.4752C28.032 23.5776 27.3888 25.776 25.8528 28.016C24.4832 29.9872 23.0528 31.9552 20.8768 31.9552C18.7008 31.9552 18.1408 30.6912 15.6288 30.6912C13.1808 30.6912 12.3104 31.9968 10.32 31.9968C8.3296 31.9968 6.9408 30.1728 5.344 27.9328C3.4944 25.3024 2 21.216 2 17.3376C2 11.1168 6.0448 7.8176 10.0256 7.8176C12.1408 7.8176 13.904 9.2064 15.232 9.2064C16.496 9.2064 18.4672 7.7344 20.8736 7.7344C21.7856 7.7344 25.0624 7.8176 27.2192 10.9088ZM19.7312 5.1008C20.7264 3.92 21.4304 2.2816 21.4304 0.6432C21.4304 0.416 21.4112 0.1856 21.3696 0C19.7504 0.0608 17.824 1.0784 16.6624 2.4256C15.7504 3.4624 14.8992 5.1008 14.8992 6.7616C14.8992 7.0112 14.9408 7.2608 14.96 7.3408C15.0624 7.36 15.2288 7.3824 15.3952 7.3824C16.848 7.3824 18.6752 6.4096 19.7312 5.1008Z" fill="black"/>
                       </svg>
                       <div class="grow">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Apple</span>
+                        <span class="text-sm text-gray-600">Apple</span>
                       </div>
                     </div>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">Wednesday 06:45 pm</span>
+                    <span class="text-sm text-gray-600">Wednesday 06:45 pm</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">In 3 days</span>
+                    <span class="text-sm text-gray-600">In 3 days</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">
+                    <span class="text-sm text-gray-600">
                       jackob@site.com
                     </span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2 flex gap-x-1">
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-gray-300 dark:text-gray-700" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-gray-300" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-gray-300 dark:text-gray-700" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-gray-300" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
                   </div>
@@ -546,7 +546,7 @@
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="pl-6 py-2">
                     <label for="hs-at-with-checkboxes-5" class="flex">
-                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-at-with-checkboxes-5">
+                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500" id="hs-at-with-checkboxes-5">
                       <span class="sr-only">Checkbox</span>
                     </label>
                   </div>
@@ -570,43 +570,43 @@
                         <path d="M18.4811 17.6476V31.1581H32V17.6476H18.4811ZM29.2602 27.4407H21.2409V25.7619H29.2602V27.4407ZM29.2602 23.0238H21.2409V21.345H29.2602V23.0238Z" fill="#42BA9B"/>
                       </svg>
                       <div class="grow">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Capsule</span>
+                        <span class="text-sm text-gray-600">Capsule</span>
                       </div>
                     </div>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">January 15</span>
+                    <span class="text-sm text-gray-600">January 15</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">In 1 week</span>
+                    <span class="text-sm text-gray-600">In 1 week</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">
+                    <span class="text-sm text-gray-600">
                       amanda@site.com
                     </span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2 flex gap-x-1">
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
                   </div>
@@ -617,7 +617,7 @@
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="pl-6 py-2">
                     <label for="hs-at-with-checkboxes-6" class="flex">
-                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-at-with-checkboxes-6">
+                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500" id="hs-at-with-checkboxes-6">
                       <span class="sr-only">Checkbox</span>
                     </label>
                   </div>
@@ -629,43 +629,43 @@
                         <path d="M8 2L0 7.27424L8 12.471L15.9999 7.27424L8 2ZM23.9999 2L15.9999 7.27424L23.9999 12.471L31.9998 7.27424L23.9999 2ZM0 17.7451L8 23.0194L15.9999 17.7451L8 12.471L0 17.7451ZM23.9999 12.471L15.9999 17.7451L23.9999 23.0194L31.9998 17.7451L23.9999 12.471ZM8 24.7258L15.9999 30L23.9999 24.7258L15.9999 19.5291L8 24.7258Z" fill="#0062FF"/>
                       </svg>
                       <div class="grow">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Dropbox</span>
+                        <span class="text-sm text-gray-600">Dropbox</span>
                       </div>
                     </div>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">January 19</span>
+                    <span class="text-sm text-gray-600">January 19</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">In 2 weeks</span>
+                    <span class="text-sm text-gray-600">In 2 weeks</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">
+                    <span class="text-sm text-gray-600">
                       baba@site.com
                     </span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2 flex gap-x-1">
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-gray-300 dark:text-gray-700" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-gray-300" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
                   </div>
@@ -676,7 +676,7 @@
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="pl-6 py-2">
                     <label for="hs-at-with-checkboxes-7" class="flex">
-                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-at-with-checkboxes-7">
+                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500" id="hs-at-with-checkboxes-7">
                       <span class="sr-only">Checkbox</span>
                     </label>
                   </div>
@@ -688,43 +688,43 @@
                         <path d="M28.6156 25.8849C28.3919 27.5493 27.2718 28.9884 25.7044 29.6283C24.9363 29.9475 24.1041 30.0444 23.2719 29.9475C22.4725 29.852 21.6716 29.5955 20.8409 29.1167C19.6895 28.4754 18.5367 27.4851 17.193 26.0131C19.3047 23.421 20.5844 21.0542 21.0647 18.9424C21.2884 17.9506 21.3212 17.0542 21.2242 16.222C21.0959 15.4227 20.8081 14.6858 20.3607 14.0461C19.3689 12.6069 17.7045 11.7747 15.8492 11.7747C13.9938 11.7747 12.3295 12.6381 11.3377 14.0461C10.8902 14.6858 10.6024 15.4227 10.4741 16.222C10.3459 17.0542 10.3787 17.9819 10.6337 18.9424C11.114 21.0542 12.4249 23.4538 14.5054 26.0444C13.193 27.5164 12.0103 28.5082 10.8574 29.1481C10.0253 29.6283 9.22585 29.8848 8.42644 29.9802C7.60169 30.0727 6.768 29.9623 5.99545 29.6611C4.42798 29.0213 3.30794 27.5806 3.08423 25.9176C2.98878 25.1183 3.0529 24.3189 3.37207 23.4225C3.46752 23.1019 3.62859 22.7827 3.78817 22.3994C4.01188 21.8879 4.2684 21.3435 4.52343 20.7992L4.55624 20.735C6.76352 15.967 9.13185 11.1036 11.5957 6.3683L11.6911 6.17591C11.9476 5.69717 12.2027 5.18413 12.4592 4.7039C12.7157 4.19234 13.0036 3.71211 13.3556 3.29601C14.0281 2.52793 14.923 2.11183 15.9148 2.11183C16.9066 2.11183 17.8029 2.52793 18.4741 3.29601C18.826 3.71211 19.1138 4.19234 19.3704 4.7039C19.6269 5.18413 19.8819 5.69568 20.1384 6.17442L20.2354 6.36681C22.6664 11.1333 25.0347 15.9968 27.242 20.7649V20.7961C27.4985 21.3077 27.7223 21.8849 27.9773 22.3964C28.1369 22.7813 28.2979 23.1004 28.3934 23.4195C28.6484 24.2533 28.7438 25.0527 28.6156 25.8849ZM15.8492 24.38C14.1221 22.2041 13.0021 20.1564 12.6173 18.4293C12.4577 17.6926 12.4249 17.0527 12.5218 16.477C12.586 15.9655 12.7784 15.5166 13.0334 15.1333C13.6419 14.2698 14.665 13.7254 15.8492 13.7254C17.0333 13.7254 18.0893 14.2384 18.665 15.1333C18.9215 15.5181 19.1124 15.9655 19.1765 16.477C19.2719 17.0527 19.2407 17.7253 19.081 18.4293C18.6978 20.125 17.5777 22.1727 15.8492 24.38ZM30.28 22.7171C30.1204 22.3338 29.9594 21.9177 29.7998 21.5658C29.5432 20.9901 29.2882 20.4457 29.063 19.9341L29.0317 19.9028C26.8244 15.1035 24.4561 10.24 21.961 5.44065L21.8655 5.24826C21.609 4.76802 21.3539 4.25648 21.0974 3.74492C20.7768 3.16924 20.4576 2.56074 19.9461 1.98506C18.9215 0.703944 17.4495 0 15.882 0C14.2817 0 12.8425 0.703944 11.7851 1.91944C11.3049 2.49512 10.9529 3.10361 10.6337 3.6793C10.3772 4.19085 10.1221 4.7024 9.86562 5.18263L9.77022 5.37354C7.30639 10.1729 4.90672 15.0364 2.69944 19.8357L2.66812 19.8998C2.44441 20.4114 2.18789 20.9558 1.93137 21.5314C1.75986 21.9103 1.60028 22.295 1.45114 22.6828C1.03503 23.867 0.906774 24.987 1.06635 26.1384C1.41833 28.5381 3.0186 30.5544 5.22588 31.4493C6.05809 31.8012 6.92162 31.9609 7.81795 31.9609C8.07447 31.9609 8.39363 31.9295 8.65014 31.8967C9.70607 31.7684 10.7933 31.418 11.8493 30.8095C13.1616 30.0742 14.4085 29.0183 15.8164 27.4821C17.2243 29.0183 18.5038 30.0742 19.7835 30.8095C20.8394 31.418 21.9267 31.7684 22.9826 31.8967C23.2391 31.9295 23.5583 31.9609 23.8148 31.9609C24.7111 31.9609 25.606 31.8012 26.4068 31.4493C28.6469 30.5529 30.2144 28.5052 30.5664 26.1384C30.8229 25.0198 30.6947 23.9013 30.28 22.7171Z" fill="#E0565B"/>
                       </svg>
                       <div class="grow">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Airbnb</span>
+                        <span class="text-sm text-gray-600">Airbnb</span>
                       </div>
                     </div>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">In 2 days</span>
+                    <span class="text-sm text-gray-600">In 2 days</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">45 minutes ago</span>
+                    <span class="text-sm text-gray-600">45 minutes ago</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">
+                    <span class="text-sm text-gray-600">
                       amanda@site.com
                     </span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2 flex gap-x-1">
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-gray-300 dark:text-gray-700" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-gray-300" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
                   </div>
@@ -735,7 +735,7 @@
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="pl-6 py-2">
                     <label for="hs-at-with-checkboxes-8" class="flex">
-                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-at-with-checkboxes-8">
+                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500" id="hs-at-with-checkboxes-8">
                       <span class="sr-only">Checkbox</span>
                     </label>
                   </div>
@@ -748,43 +748,43 @@
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M8 24C5.8 24 4 25.78 4 28C4 30.2 5.78 32 8 32C10.2 32 12 30.22 12 28C12 25.78 10.22 24 8 24Z" fill="#5C54FF"/>
                       </svg>
                       <div class="grow">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Prosperops</span>
+                        <span class="text-sm text-gray-600">Prosperops</span>
                       </div>
                     </div>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">January 19</span>
+                    <span class="text-sm text-gray-600">January 19</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">In 2 weeks</span>
+                    <span class="text-sm text-gray-600">In 2 weeks</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">
+                    <span class="text-sm text-gray-600">
                       baba@site.com
                     </span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2 flex gap-x-1">
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-gray-300 dark:text-gray-700" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-gray-300" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
                   </div>
@@ -795,7 +795,7 @@
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="pl-6 py-2">
                     <label for="hs-at-with-checkboxes-9" class="flex">
-                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-at-with-checkboxes-9">
+                      <input type="checkbox" class="shrink-0 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500" id="hs-at-with-checkboxes-9">
                       <span class="sr-only">Checkbox</span>
                     </label>
                   </div>
@@ -819,43 +819,43 @@
                         </defs>
                       </svg>
                       <div class="grow">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Astro</span>
+                        <span class="text-sm text-gray-600">Astro</span>
                       </div>
                     </div>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">Monday 12:12 pm</span>
+                    <span class="text-sm text-gray-600">Monday 12:12 pm</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">In 3 days</span>
+                    <span class="text-sm text-gray-600">In 3 days</span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">
+                    <span class="text-sm text-gray-600">
                       brian@site.com
                     </span>
                   </div>
                 </td>
                 <td class="h-px w-px whitespace-nowrap">
                   <div class="px-6 py-2 flex gap-x-1">
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <svg class="w-3 h-3 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg class="w-3 h-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
                   </div>
@@ -866,13 +866,13 @@
           <!-- End Table -->
 
           <!-- Footer -->
-          <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 dark:border-gray-700">
+          <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200">
             <div class="inline-flex items-center gap-x-2">
-              <p class="text-sm text-gray-600 dark:text-gray-400">
+              <p class="text-sm text-gray-600">
                 Showing:
               </p>
               <div class="max-w-sm space-y-3">
-                <select class="py-2 px-3 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                <select class="py-2 px-3 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -881,21 +881,21 @@
                   <option>20</option>
                 </select>
               </div>
-              <p class="text-sm text-gray-600 dark:text-gray-400">
+              <p class="text-sm text-gray-600">
                 of 20
               </p>
             </div>
 
             <div>
               <div class="inline-flex gap-x-2">
-                <button type="button" class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
+                <button type="button" class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm">
                   <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                   </svg>
                   Prev
                 </button>
 
-                <button type="button" class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
+                <button type="button" class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm">
                   Next
                   <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
