@@ -16,9 +16,6 @@
                 <table class="min-w-full divide-y divide-gray-200">
                   <thead class="bg-gray-50">
                     <tr>
-                      <th scope="col" class="pl-6 py-3 text-left">
-                          <input type="checkbox" name="chk" id="select_all" class="select_all" />
-                      </th>
                       <th scope="col" class="px-6 py-3 text-left">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
@@ -63,16 +60,7 @@
                   </thead>
         @foreach($temples as $temple)
                   <tbody class="divide-y divide-gray-200">
-                    <tr>
-                      <td class="h-px w-px whitespace-nowrap">
-                        <div class="pl-6 py-2">
-                          <label for="hs-at-with-checkboxes-1" class="flex">
-                              <input type="checkbox" name="ids"  class="checkbox" id = "checkbox" value="{{ $temple->id }}" id="">
-
-                            <span name="cheks"class="sr-only">Checkbox</span>
-                          </label>
-                        </div>
-                      </td>  
+                    <tr> 
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2">
                         {{$temple->display_order}}
@@ -110,7 +98,8 @@
                         <div class="px-6 py-2 flex gap-x-1">
                            <span class="text-sm text-gray-600">
                             	
-                              <a href="{{ route('temple.edit', $temple) }}">編集</a>
+                              <a href="{{ route('temple.edit', $temple) }}" class="btn btn-primary">編集</a>
+                              <a href="{{ route('temple.destroy', $temple->id) }}" class="btn btn-danger">削除</a>
 
                           </span>
                         </div>
@@ -121,7 +110,6 @@
                   </tbody>
               </table>          
              <!-- End Table Section -->
-
              @endsection
                                 {{ $temples->appends(request()->query())->links('vendor.pagination.tailwind2') }}
 

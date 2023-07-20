@@ -28,6 +28,7 @@ class TempleRequest extends FormRequest
             'name_kana' => 'required',
             'name' => 'required',
             'religion_group' => 'required',
+            'tel' => 'required',
             //'fax' => 'required|integer|max:12'
             /*
             'fish_name' => 'required',
@@ -42,11 +43,11 @@ class TempleRequest extends FormRequest
     public function messages()
     {
         return [
-            'display_order' => '暫定でも良いので数字で入れてください', 
-            'name_kana.required' => '読みがなを入れてください',
-            'name.required' => '名称を入れてください',
+            'display_order' => '表示順を暫定でも良いので数字で入れてください(1や999など)', 
+            'name_kana.required' => '寺院の読みがなを入れてください',
+            'name.required' => '寺院の名称を入れてください',
             'religion_group.required' => '宗旨を入れてください',
-            'tel' => '電話番号を正しく入れてください'
+            'tel' => '電話番号を正しく入れてください',
         ];
     }
 }

@@ -11,10 +11,10 @@ class Temple extends Model
     protected $table = 'temples'; // テーブル名
 
     protected $fillable = [
-        'temple_code',
         'display_order',
         'name_kana',
         'name',
+        'religion_group',
         'tel',
         'fax',
         'other',

@@ -40,7 +40,7 @@ Route::prefix('/mastas/temple/')->group(function () {
     Route::post('/store', [TempleController::class, 'store'])->name('temple.store');
     Route::get('/edit/{id}', [TempleController::class, 'edit'])->name('temple.edit');
     Route::post('/update/{id}', [TempleController::class, 'update'])->name('temple.update');
-    Route::delete('/destoy/{id}', [TempleController::class, 'destroy'])->name('temple.destroy');
+    Route::get('/destoy/{id}', [TempleController::class, 'destroy'])->name('temple.destroy');
 });
 
 /*

@@ -41,9 +41,9 @@ class TempleController extends Controller
                     'fax' => 'required|max:12',
                     'other' => 'nullable',
                 ]);
-                        Temple::create($request->all());
-                            return redirect()->route('temple.index')
-                                    ->with('success','新たな寺院マスタが登録されました');
+                Temple::create($request->all());
+                return redirect()->route('temple.index')
+                        ->with('success','新たな寺院マスタが登録されました');
             }
 /*
         public function show(Temple $temple)
@@ -54,26 +54,31 @@ class TempleController extends Controller
         public function edit($id)
         {  // $templeId = (int) $request->route('templeId');
             $temple = Temple::where('id', $id)->firstOrfail();
-            return view('mastas.edit', [
-                'title' => 'マスタ編集',
-                'temple' => $temple,
-            ]);
+            return view('mastas.edit')->with('temple', $temple);
         }
 
         //フォームリクエストのバリデーションを有効にする為引数(インジェクション)をTempleRequestにしている
         public function update(TempleRequest $request, Temple $temple)
         {
-         //$temple = Temple::find($id);   
-         $temple->update($request->all());
-        return redirect()->route('temple.index');
-                                //->with('success','updatedしました');
-            }
-    public function destroy(Temple $temple)
-    {
-        $temple->delete();
-
+         $temple = Temple::find($request->id);   
+         $temple->update([
+            "display_order" => $request->display_order,
+            "name_kana" => $request->name_kana,
+            "name" => $request->name,
+            "religion_group" => $request->religion_group,
+            "tel" => $request->tel,
+            "fax" => $request->fax,
+            "other" => $request->other,
+         ]);
         return redirect()->route('temple.index')
-                        ->with('success','削除しました');
+                                ->with('success','updatedしました');
+            }
+        public function destroy($id){
+            $temple = Temple::where('id', $id)->firstOrfail();
+            $temple->delete($id);
 
-    }
+            return redirect()->route('temple.index');
+                            //->with('success','削除しました');
+
+        }
 }
