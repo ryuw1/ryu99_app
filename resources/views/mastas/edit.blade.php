@@ -136,7 +136,7 @@
                       </td>
                       <div class="col-lg-12 mt-1 mr-1">
                         <div class="float-right">
-                      <input type="submit" value="変　更" class="btn btn-success">
+                      <input type="submit" value="変　更" class="btn btn-outline-primary">
                       </div>
                     </div>
                     </form>

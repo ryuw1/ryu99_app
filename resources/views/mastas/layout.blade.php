@@ -16,24 +16,22 @@
             padding-left: 30px;
         }
     </style>
-
     </head>
     {{ Breadcrumbs::render('about2') }}
       <body class="h-full">
         <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <!-- Card -->
-          <div class="flex flex-col">
-            <div class="-m-1.5 overflow-x-auto">
-              <div class="p-1.5 min-w-full inline-block align-middle">
+            <div class="-m-3.5 overflow-x-auto">
+          
                 <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
                   <!-- Header -->
-                  <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200">
-                    <div>
-                      <h2 class="text-xl font-semibold text-gray-800">
+                  <body class="antialiased">
+                    <div class="flort-left">  
+                    <h2 class="text-xl font-semibold text-gray-800">
                         寺院マスタ
-                      </h2>      
-                    </div>
-                <body class="antialiased">
+                      </h2>
+                    </div>   
+
             @yield('content')
        </body>
 </html>

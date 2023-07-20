@@ -21,7 +21,9 @@ class TempleController extends Controller
     public function index()
         {
             $temples = Temple::latest()->paginate(10);
-
+            //$temples = Temple::select("*")
+            //->orderBy("name_kana")
+            //->get();
             return view('mastas.index', compact('temples'))
                 ->with('i', (request()->input('page', 1) -1) *5);
     }

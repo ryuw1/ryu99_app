@@ -8,7 +8,6 @@
             <div class="p-1.5 min-w-full inline-block align-middle">
               <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
                 <!-- Header -->
-                <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200">
 
                 <!-- End Header -->
       
@@ -56,6 +55,18 @@
                           </span>
                         </div>
                       </th>
+                      <th scope="col" class="px-6 py-3 text-left">
+                        <div class="flex items-center gap-x-2">
+                          <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
+                            その他
+                          </span>
+                        </div>
+                      </th>
+                      <th>
+                        <div class="row justify-content-center"> 
+                          <a href="{{ route('temple.create') }}" class="btn btn-outline-success flort-right">新規登録</a>
+                           </div>
+                      </th>
                     </tr>
                   </thead>
         @foreach($temples as $temple)
@@ -97,21 +108,24 @@
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2 flex gap-x-1">
                            <span class="text-sm text-gray-600">
+                              {{$temple->other}}
+                          </span>
+                        </div>
+                      </td>
+                      <td class="h-px w-px whitespace-nowrap">
+                        <div class="px-6 py-2 flex gap-x-1">
+                           <span class="text-sm text-gray-600">
                             	
-                              <a href="{{ route('temple.edit', $temple) }}" class="btn btn-primary">編集</a>
-                              <a href="{{ route('temple.destroy', $temple->id) }}" class="btn btn-danger">削除</a>
+                              <a href="{{ route('temple.edit', $temple) }}" class="btn btn-outline-primary">編集</a>
+                              <a href="{{ route('temple.destroy', $temple->id) }}" class="btn btn-outline-danger">削除</a>
 
                           </span>
                         </div>
                       </td>
                     </tr>
                    @endforeach 
-
                   </tbody>
-              </table>          
+              </table>        
+              {{ $temples->appends(request()->query())->links('vendor.pagination.tailwind2') }}  
              <!-- End Table Section -->
              @endsection
-                                {{ $temples->appends(request()->query())->links('vendor.pagination.tailwind2') }}
-
- 
-      

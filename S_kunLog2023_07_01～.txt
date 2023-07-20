@@ -318,3 +318,16 @@
 		updateとdelete成功。上のパンくずリストの修正と、paginateが上にあるのでしたに移動する。削除ジのプロンプトがナイので別途追加する。
 		CSSで寺院マスタとあるタイトルの位置が左端なので上に移動する。
 		bootstrapのボタンのスタイリングでbtn btn-primaryでも他のデザインでも、ちょっと目立ちすぎなので、白地に文字色が赤や青だと良いと思う。
+	5. 18:43
+		ボタンのスタイルで希望のものがbootstrapのデフォルトであったのでそれで解決。
+		表示についてはほぼ解決したが表示順についてEloquentで           
+		 $temples = Temple::select("*")
+            ->orderBy("name_kana")
+            ->get();
+		とするとpaginateで以下のエラーが出る。
+		Method Illuminate\Database\Eloquent\Collection::appends does not exist.
+		明日以降に対応する。
+	6.20:11
+		UIに関してはほぼ完了で良いと思う。
+		修正画面で、FAXやその他など必ずしも入力なしでも良いフィールドで値が空の時にはじかれるので
+		templeRequestのvalidateで調整が必要。

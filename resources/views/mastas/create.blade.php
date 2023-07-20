@@ -4,22 +4,18 @@
       @section('content')
                   <div>
                     <div class="inline-flex gap-x-2">
-                     <a class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm" href={{ route('temple.create')}}>
-                        <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M2.63452 7.50001L13.6345 7.5M8.13452 13V2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                        新規登録
-                      </a>
+                    
                     </div>
                   </div>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-12 mt-1 mr-1">
-                            <div class="float-right">
+                            <div class="float-left">
                                 <a class="btn btn-primary" href="{{ route('temple.index') }}"> Back</a>
                             </div>
                         </div>
+
                         
                 <!-- End Header -->
                 @if ($errors->any())
@@ -146,7 +142,10 @@
                     </tr>
                   </tbody>
               </table> 
-              <input type="submit" value="登録">
+              <input type="submit" class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm" href={{ route('temple.create')}}>
+                <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.63452 7.50001L13.6345 7.5M8.13452 13V2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
             </form>       
       <!-- End Table Section -->
       @endsection
