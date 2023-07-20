@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Requests\Mastas;
+
 use Illuminate\Foundation\Http\FormRequest;
 
 class TempleRequest extends FormRequest
@@ -27,7 +28,6 @@ class TempleRequest extends FormRequest
             'name_kana' => 'required',
             'name' => 'required',
             'religion_group' => 'required',
-            'tel' => 'required|integer|max:12',
             //'fax' => 'required|integer|max:12'
             /*
             'fish_name' => 'required',

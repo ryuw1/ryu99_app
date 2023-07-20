@@ -5,16 +5,9 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\Mastas\TempleController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\PostController;
+
+
 /*
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -34,21 +27,23 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-Route::get('/', function () {
-    return view('demoForm');
-});
 */
+//Route::resource('temple',TempleController::class);
+
+
 //Route::get('/temple',[TempleController::class, 'index'])->name('temple.index');
 
 Route::prefix('/mastas/temple/')->group(function () {
     Route::get('/', [TempleController::class, 'index'])->name('temple.index');
     Route::get('/create', [TempleController::class, 'create'])->name('temple.create');
-    Route::post('/temple/{id}', [TempleController::class, 'edit'])->name('temple.edit');
-    Route::patch('/temple/{id}', [TempleController::class, 'update'])->name('temple.update');
-    Route::delete('/temple/{id}', [TempleController::class, 'destroy'])->name('temple.destroy');
+    //Route::post('/create', [TempleController::class, 'create'])->name('temple.created');
+    Route::post('/store', [TempleController::class, 'store'])->name('temple.store');
+    Route::get('/edit/{id}', [TempleController::class, 'edit'])->name('temple.edit');
+    Route::post('/update/{id}', [TempleController::class, 'update'])->name('temple.update');
+    Route::delete('/destoy/{id}', [TempleController::class, 'destroy'])->name('temple.destroy');
 });
 
+/*
 //20230713 resourceとホワイトリストとを使った方法
 //Route::resource('temple', 'TempleController', ['only' => ['index', 'create', 'edit', 'store', 'destroy']]);
 

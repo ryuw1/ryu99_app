@@ -1,0 +1,129 @@
+      <!-- Table Section -->
+      @extends('mastas.layout')
+      @section('content')
+      <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <!-- Card -->
+        <div class="flex flex-col">
+          <div class="-m-1.5 overflow-x-auto">
+            <div class="p-1.5 min-w-full inline-block align-middle">
+              <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                <!-- Header -->
+                <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200">
+
+                <!-- End Header -->
+      
+                <!-- Table -->
+                <table class="min-w-full divide-y divide-gray-200">
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th scope="col" class="pl-6 py-3 text-left">
+                          <input type="checkbox" name="chk" id="select_all" class="select_all" />
+                      </th>
+                      <th scope="col" class="px-6 py-3 text-left">
+                        <div class="flex items-center gap-x-2">
+                          <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
+                            表示順
+                          </span>
+                        </div>
+                      </th>
+      
+                      <th scope="col" class="px-6 py-3 text-left">
+                        <div class="flex items-center gap-x-2">
+                          <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
+                          か　な<br/>  
+                          寺院名
+                          </span>
+                        </div>
+                      </th>
+      
+                      <th scope="col" class="px-6 py-3 text-left">
+                        <div class="flex items-center gap-x-2">
+                          <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
+                          宗　旨
+                          </span>
+                        </div>
+                      </th>
+      
+                      <th scope="col" class="px-6 py-3 text-left">
+                        <div class="flex items-center gap-x-2">
+                          <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
+                            TEL
+                          </span>
+                        </div>
+                      </th>
+      
+                      <th scope="col" class="px-6 py-3 text-left">
+                        <div class="flex items-center gap-x-2">
+                          <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
+                            FAX
+                          </span>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+        @foreach($temples as $temple)
+                  <tbody class="divide-y divide-gray-200">
+                    <tr>
+                      <td class="h-px w-px whitespace-nowrap">
+                        <div class="pl-6 py-2">
+                          <label for="hs-at-with-checkboxes-1" class="flex">
+                              <input type="checkbox" name="ids"  class="checkbox" id = "checkbox" value="{{ $temple->id }}" id="">
+
+                            <span name="cheks"class="sr-only">Checkbox</span>
+                          </label>
+                        </div>
+                      </td>  
+                      <td class="h-px w-px whitespace-nowrap">
+                        <div class="px-6 py-2">
+                        {{$temple->display_order}}
+                        </div>
+                      </td>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="h-px w-px whitespace-nowrap">
+                        <div class="px-6 py-2">
+                              {{$temple->name_kana}}<br/>
+                              {{$temple->name}}
+                        </div>
+                      </td>
+                      <td class="h-px w-px whitespace-nowrap">
+                        <div class="px-6 py-2">
+                          <span class="text-sm text-gray-600">{{$temple->religion_group}}</span>
+                        </div>
+                      </td>
+                      <td class="h-px w-px whitespace-nowrap">
+                        <div class="px-6 py-2">
+                          <span class="text-sm text-gray-600">
+                              {{$temple->tel}}
+                          </span>
+                        </div>
+                      </td>
+                      <td class="h-px w-px whitespace-nowrap">
+                        <div class="px-6 py-2 flex gap-x-1">
+                           <span class="text-sm text-gray-600">
+                              {{$temple->fax}}
+                          </span>
+                        </div>
+                      </td>
+                      <td class="h-px w-px whitespace-nowrap">
+                        <div class="px-6 py-2 flex gap-x-1">
+                           <span class="text-sm text-gray-600">
+                            	
+                              <a href="{{ route('temple.edit', $temple) }}">編集</a>
+
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                   @endforeach 
+
+                  </tbody>
+              </table>          
+             <!-- End Table Section -->
+
+             @endsection
+                                {{ $temples->appends(request()->query())->links('vendor.pagination.tailwind2') }}
+
+ 
+      

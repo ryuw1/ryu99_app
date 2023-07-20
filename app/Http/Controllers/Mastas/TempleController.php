@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Mastas;
 
-use App\Models\Mastas\TempleModel;
+use App\Models\Mastas\Temple;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Mastas\TempleRequest;
 //use App\Http\Requests\Mastas\UpdateTempleRequest;
-use App\Repositories\Mastas\TempleRepository;
+//use App\Repositories\Mastas\TempleRepository;
 //use App\Services\Mastas\TempleService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -15,57 +15,65 @@ use Illuminate\View\View;
 
 class TempleController extends Controller
 {
-    protected $templeService;
-    protected $templeRepository;
+    //protected $templeService;
+    //protected $templeRepository;
 
-    public function index(TempleRepository $templeRepository)
+    public function index()
         {
-            /*
-            $temples = $templeRepository->getAll();
-        return view('mastas/temple', compact('temples'));
-    */
-    return view('components/base');    
+            $temples = Temple::latest()->paginate(10);
+
+            return view('mastas.index', compact('temples'))
+                ->with('i', (request()->input('page', 1) -1) *5);
     }
-        //create=登録画面を呼び出し、storeメソッドを呼ぶ->登録と一覧画面同居なので不要?
-    public function create(TempleRequest $request)
-        {
-        return view('');
-        }
 
-    public function store(TempleRequest $request)
-        {
-        temple::create($request->all());
-        return redirect()->route('temple.index')
-                        ->with('success','temple created successfully.');
-        }
-
+        public function create()
+            {
+            return view('mastas.create');
+            }
     
-    public function show(TempleService $templeService)
-    {
-        $temples = $templeService;
-
-        return view('temple', compact('temples'));
-    }
-    public function edit(TempleService $templeModel)
-    {
-        //
-    }
-
-    public function update(UpdateTempleModelRequest $request, TempleService $templeModel)
-    {
-            $request->validate([
-                'name' => 'required',
-                'name_kana' => 'required',
+        public function store(Request $request)
+            {
+                $request->validate([
+                    'display_order' => 'required|max:3',
+                    'name_kana' => 'required|max:20',
+                    'name' => 'required|max:20',
+                    'tel' => 'required|max:12',
+                    'fax' => 'required|max:12',
+                    'other' => 'nullable',
+                ]);
+                        Temple::create($request->all());
+                            return redirect()->route('temple.index')
+                                    ->with('success','新たな寺院マスタが登録されました');
+            }
+/*
+        public function show(Temple $temple)
+        {
+            return view('temple.show', compact('temples'));
+        }
+*/                   
+        public function edit($id)
+        {  // $templeId = (int) $request->route('templeId');
+            $temple = Temple::where('id', $id)->firstOrfail();
+            return view('mastas.edit', [
+                'title' => 'マスタ編集',
+                'temple' => $temple,
             ]);
-        
-            $templeModel->update($request->all());
-        
-            return redirect()->route('temple.index')
-                            ->with('success','temple updated successfully');
         }
 
-    public function destroy(TempleService $templeModel)
+        //フォームリクエストのバリデーションを有効にする為引数(インジェクション)をTempleRequestにしている
+        public function update(TempleRequest $request, Temple $temple)
+        {
+         //$temple = Temple::find($id);   
+         $temple->update($request->all());
+        return redirect()->route('temple.index');
+                                //->with('success','updatedしました');
+            }
+    public function destroy(Temple $temple)
     {
-        //
+        $temple->delete();
+
+        return redirect()->route('temple.index')
+                        ->with('success','削除しました');
+
     }
 }

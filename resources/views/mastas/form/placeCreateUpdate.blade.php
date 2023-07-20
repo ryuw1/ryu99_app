@@ -1,5 +1,6 @@
+
 <!-- Table -->
-        <form action="{{ route('temple.create') }}" method="post">
+
           @csrf
           <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
@@ -48,7 +49,7 @@
                 </th>
               </tr>
             </thead>
-
+            <form action="{{ route('temple.create') }}" method="post">
             <tbody class="divide-y divide-gray-200">
               <tr>
                 <td class="h-px w-px whitespace-nowrap">
@@ -89,4 +90,7 @@
             </tbody>
         </table>          
 <!-- End Table Section -->
-      </form>
+    
+    登録する
+
+  </form>
