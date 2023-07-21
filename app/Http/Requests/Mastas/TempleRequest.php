@@ -22,14 +22,11 @@ class TempleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //'id' => 'required|integger',
-            //'temple_code' => 'required',
             'display_order' => 'required|integer',
             'name_kana' => 'required',
             'name' => 'required',
             'religion_group' => 'required',
             'tel' => 'required',
-            //'fax' => 'required|integer|max:12'
             /*
             'fish_name' => 'required',
             'year' => 'required|integer|between:1990,2018',

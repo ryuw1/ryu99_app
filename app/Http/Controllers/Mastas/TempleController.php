@@ -40,12 +40,11 @@ class TempleController extends Controller
                     'name_kana' => 'required|max:20',
                     'name' => 'required|max:20',
                     'tel' => 'required|max:12',
-                    'fax' => 'required|max:12',
-                    'other' => 'nullable',
                 ]);
                 Temple::create($request->all());
+                
                 return redirect()->route('temple.index')
-                        ->with('success','新たな寺院マスタが登録されました');
+                        ->with('success','新たな寺院マスタが登録されました'); 
             }
 /*
         public function show(Temple $temple)

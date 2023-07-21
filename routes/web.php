@@ -32,7 +32,6 @@ Route::middleware('auth')->group(function () {
 
 
 //Route::get('/temple',[TempleController::class, 'index'])->name('temple.index');
-
 Route::prefix('/mastas/temple/')->group(function () {
     Route::get('/', [TempleController::class, 'index'])->name('temple.index');
     Route::get('/create', [TempleController::class, 'create'])->name('temple.create');
