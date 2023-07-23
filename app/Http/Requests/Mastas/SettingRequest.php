@@ -4,7 +4,7 @@ namespace App\Http\Requests\Mastas;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TempleRequest extends FormRequest
+class SettingRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -41,7 +41,7 @@ class TempleRequest extends FormRequest
     {
         return [
             'display_order' => '表示順を暫定でも良いので数字で入れてください(1や999など)', 
-            'name_kana' => '寺院の読みがなを入れてください',
+            'name_kana.required' => '寺院の読みがなを入れてください',
             'name.required' => '寺院の名称を入れてください',
             'religion_group.required' => '宗旨を入れてください',
             'tel' => '電話番号を正しく入れてください',

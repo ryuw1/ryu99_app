@@ -10,17 +10,13 @@
           <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
           <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
           @vite('resources/css/app.css', 'resources/js/app.js')
-                <!-- フラッシュメッセージScript -->
-                <script>
-                  @if (session('flash_message'))
-                      $(function () {
-                              toastr.success('{{ session('flash_message') }}');
-                      });
-                  @endif
-                  $(function(){
-                        $('.flash_message').fadeOut(500);
-                    });
-                    </script>
+  </head>
+    <style>
+        body {
+            padding-top: 30px;
+            padding-left: 30px;
+        }
+    </style>
     </head>
     {{ Breadcrumbs::render('about2') }}
       <body class="h-full">
@@ -31,18 +27,11 @@
                 <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
                   <!-- Header -->
                   <body class="antialiased">
-          <!-- フラッシュメッセージ表示 -->
-                @if (session('flash_message'))
-                  <div class="row justify-content-center"> 
-                   <span class="p-3 m-2 border rounded bg-success text-white text-center">
-                      {{ session('flash_message') }}
-                    </span>
-                  </div>
-                @endif
-          </div>
-          <!-- 読み込み部分--> 
-            @yield('content')<br/>
-          <!-- paginate-->
-            {{ $temples->appends(request()->query())->links('vendor.pagination.tailwind2') }}
+                    <div class="flort-left">  
+                    <h2 class="text-xl font-semibold text-gray-800">
+                        寺院マスタ
+                      </h2>
+                    </div>   
+            @yield('content')
        </body>
 </html>

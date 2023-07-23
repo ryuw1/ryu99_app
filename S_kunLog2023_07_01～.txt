@@ -345,4 +345,30 @@
 	4.11:40
 	旧テーブルをhetemlからダウンロードし必要な加工を加えた。
 	各Modelを編集。
-	
+	5.13:40
+		Request/Mastas/Requestファイルで確認OKなもの
+			staff
+			GroupByProductCode
+			Temple
+			Unit
+			Hospital
+			Hall
+			Obituary(訃報本文)
+			Product
+			Relationship
+			Setting(後回し)
+			Company
+
+	6.16:37
+	データの登録が完了しました的なフラッシュメッセージを取り合えずmastas/temple/layout.blade.phpで、paginateの部分やらに今まで出ていなかったエラーが出て動かない。
+	配置した。それがfadeoutするjQueryコードも乗せたが、やはり動かない...
+
+	7.17:53
+	index.bladeで削除ボタンを押した時に一旦confaumが表示される作業が完了。たしかonClickでreturn True　か　faultだけだった記憶があったが、ググると凄く複雑だったり遠回りだったりの
+	記事が多くて驚く。
+
+	8.20:46
+	TempleRequest を　Place系マスタで共有できないかを検討する。
+20230722 11:30
+	1.11:30
+	寺院マスタのパンくずリストを整えれば完成で良いと思う。viewのlayout.blade.phpをtempleディレクトリからmastaへ1階層あげて共通化した。

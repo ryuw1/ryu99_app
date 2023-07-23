@@ -5,18 +5,21 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagenation\Paginator;
 
-class Temple extends Model
+class Product extends Model
 {
     use HasFactory;
-    protected $table = 'temples'; // テーブル名
+    protected $table = 'products'; // テーブル名
 
     protected $fillable = [
-        'display_order',
-        'name_kana',
-        'name',
-        'religion_group',
-        'tel',
-        'fax',
+        'display_order',	
+        'group_by_product_code',
+        'code',	
+        'name',	
+        'unit_price',	
+        'tax_rate',	
+        'quantity',	
+        'unit_orice_including_tax',	
+        'unit',	
         'other',
     ];
 

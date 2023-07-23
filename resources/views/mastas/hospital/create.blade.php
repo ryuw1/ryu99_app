@@ -1,5 +1,5 @@
       <!-- Table Section -->
-      @extends('mastas.layout')
+      @extends('mastas.temple.layout')
       @section('content')
                   <div>
                     <div class="inline-flex gap-x-2">
@@ -85,7 +85,7 @@
                       </th>
                     </tr>
                   </thead>
-                  <form action="{{ route('temple.update', $temple->id) }}" method="POST">
+                  <form action="{{ route('temple.store') }}" method="POST">
                     @csrf
                   <tbody class="divide-y divide-gray-200">
                     <tr>
@@ -95,48 +95,47 @@
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
-                  <form method="post" action="{{ route('temple.update', $temple) }}">
                           @csrf
                         <div class="px-6 py-2">
-                          <input type="hidden" name="id" class="form-control" placeholder="" value=" {{ $temple->id }} ">  
-                          <input type="text" name="display_order" size="3" class="form-control" placeholder=""value="{{ $temple->display_order }}">
+                          <input type="hidden" name="id" class="form-control" placeholder="" value="">  
+                          <input type="text" name="display_order" size="3" class="form-control" placeholder=""value="">
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2">
-                            <input type="text" name="name_kana" size="30" class="form-control" placeholder="" value="{{ $temple->name_kana }}">
-                            <input type="text" name="name" size="30" class="form-control" placeholder="" value="{{ $temple->name }}">
+                            <input type="text" name="name_kana" size="30" class="form-control" placeholder="" value="">
+                            <input type="text" name="name" size="30" class="form-control" placeholder="" value="">
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2">
-                            <input type="text" name="religion_group" size="20" class="form-control" placeholder="" value="{{ $temple->religion_group }}">
+                            <input type="text" name="religion_group" size="20" class="form-control" placeholder="" value="">
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2">
                           <span class="text-sm text-gray-600">
-                            <input type="text" name="tel" size="12"  class="form-control" placeholder="" value="{{ $temple->tel }}">
+                            <input type="text" name="tel" size="12"  class="form-control" placeholder="" value="">
                           </span>
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2 flex gap-x-1">
                            <span class="text-sm text-gray-600">
-                            <input type="text" name="fax" size="12" class="form-control" placeholder="" value="{{ $temple->fax }}">
+                            <input type="text" name="fax" size="12" class="form-control" placeholder="" value="">
                           </span>
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2 flex gap-x-1">
                            <span class="text-sm text-gray-600">
-                            <input type="text" name="other" size="30" class="form-control" placeholder="" value="{{ $temple->other }}">
+                            <input type="text" name="other" size="30" class="form-control" placeholder="" value="">
                           </span>
                         </div>
                       </td>
                       <div class="col-lg-12 mt-1 mr-1">
                         <div class="float-right">
-                      <input type="submit" value="変　更" class="btn btn-outline-primary">
+                      <input type="submit" value="登　録" class="btn btn-outline-primary">
                       </div>
                     </div>
                     </form>
@@ -145,3 +144,5 @@
               </table> 
       <!-- End Table Section -->
       @endsection
+ 
+  

@@ -1,21 +1,42 @@
       <!-- Table Section -->
-      @extends('mastas.layout')
+      @extends('mastas.temple.layout')
       @section('content')
-      <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-        <!-- Card -->
-        <div class="flex flex-col">
-          <div class="-m-1.5 overflow-x-auto">
-            <div class="p-1.5 min-w-full inline-block align-middle">
-              <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
-                <!-- Header -->
+                  <div>
+                    <div class="inline-flex gap-x-2">
+                    
+                        <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.63452 7.50001L13.6345 7.5M8.13452 13V2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
 
+                      </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12 mt-1 mr-1">
+                            <div class="float-left">
+                                <a class="btn btn-primary" href="{{ route('temple.index') }}"> Back</a>
+                            </div>
+                        </div>    
                 <!-- End Header -->
-      
+                @if ($errors->any())
+                <div class="alert alert-danger align align-center">
+                    <strong>ご確認下さい</strong> 入力の内容に間違いがあります。<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <!-- Table -->
                 <table class="min-w-full divide-y divide-gray-200">
                   <thead class="bg-gray-50">
                     <tr>
-                      <th scope="col" class="px-6 py-3 text-left">
+                      <th scope="col" class="pl-6 py-3 text-center">
+
+                      </th>
+                      <th scope="col" class="px-6 py-3 text-center">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
                             表示順
@@ -23,7 +44,7 @@
                         </div>
                       </th>
       
-                      <th scope="col" class="px-6 py-3 text-left">
+                      <th scope="col" class="px-6 py-3 text-center">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
                           か　な<br/>  
@@ -32,7 +53,7 @@
                         </div>
                       </th>
       
-                      <th scope="col" class="px-6 py-3 text-left">
+                      <th scope="col" class="px-6 py-3 text-center">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
                           宗　旨
@@ -40,7 +61,7 @@
                         </div>
                       </th>
       
-                      <th scope="col" class="px-6 py-3 text-left">
+                      <th scope="col" class="px-6 py-3 text-center">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
                             TEL
@@ -48,84 +69,80 @@
                         </div>
                       </th>
       
-                      <th scope="col" class="px-6 py-3 text-left">
+                      <th scope="col" class="px-6 py-3 text-center">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
                             FAX
                           </span>
                         </div>
                       </th>
-                      <th scope="col" class="px-6 py-3 text-left">
+                      <th scope="col" class="px-6 py-3 text-center">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
                             その他
                           </span>
                         </div>
                       </th>
-                      <th>
-                        <div class="row justify-content-center"> 
-                          <a href="{{ route('temple.create') }}" class="btn btn-outline-success flort-right">新規登録</a>
-                           </div>
-                      </th>
                     </tr>
                   </thead>
-        @foreach($temples as $temple)
+                  <form action="{{ route('temple.store') }}" method="POST">
+                    @csrf
                   <tbody class="divide-y divide-gray-200">
-                    <tr> 
+                    <tr>
                       <td class="h-px w-px whitespace-nowrap">
-                        <div class="px-6 py-2">
-                        {{$temple->display_order}}
-                        </div>
-                      </td>
-                          </div>
+                        <div class="pl-6 py-2">
+                           
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
+                          @csrf
                         <div class="px-6 py-2">
-                              {{$temple->name_kana}}<br/>
-                              {{$temple->name}}
+                          <input type="hidden" name="id" class="form-control" placeholder="" value="">  
+                          <input type="text" name="display_order" size="3" class="form-control" placeholder=""value="">
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2">
-                          <span class="text-sm text-gray-600">{{$temple->religion_group}}</span>
+                            <input type="text" name="name_kana" size="30" class="form-control" placeholder="" value="">
+                            <input type="text" name="name" size="30" class="form-control" placeholder="" value="">
+                        </div>
+                      </td>
+                      <td class="h-px w-px whitespace-nowrap">
+                        <div class="px-6 py-2">
+                            <input type="text" name="religion_group" size="20" class="form-control" placeholder="" value="">
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2">
                           <span class="text-sm text-gray-600">
-                              {{$temple->tel}}
+                            <input type="text" name="tel" size="12"  class="form-control" placeholder="" value="">
                           </span>
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2 flex gap-x-1">
                            <span class="text-sm text-gray-600">
-                              {{$temple->fax}}
+                            <input type="text" name="fax" size="12" class="form-control" placeholder="" value="">
                           </span>
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2 flex gap-x-1">
                            <span class="text-sm text-gray-600">
-                              {{$temple->other}}
+                            <input type="text" name="other" size="30" class="form-control" placeholder="" value="">
                           </span>
                         </div>
                       </td>
-                      <td class="h-px w-px whitespace-nowrap">
-                        <div class="px-6 py-2 flex gap-x-1">
-                           <span class="text-sm text-gray-600">
-                            	
-                              <a href="{{ route('temple.edit', $temple) }}" class="btn btn-outline-primary">編集</a>
-                              <a href="{{ route('temple.destroy', $temple->id) }}" class="btn btn-outline-danger">削除</a>
-
-                          </span>
-                        </div>
-                      </td>
+                      <div class="col-lg-12 mt-1 mr-1">
+                        <div class="float-right">
+                      <input type="submit" value="登　録" class="btn btn-outline-primary">
+                      </div>
+                    </div>
+                    </form>
                     </tr>
-                   @endforeach 
                   </tbody>
-              </table>        
-              {{ $temples->appends(request()->query())->links('vendor.pagination.tailwind2') }}  
-             <!-- End Table Section -->
-             @endsection
+              </table> 
+      <!-- End Table Section -->
+      @endsection
+ 
+  

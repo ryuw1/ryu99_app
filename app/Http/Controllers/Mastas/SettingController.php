@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Mastas;
 use App\Models\Mastas\Temple;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Mastas\TempleRequest;
+//use App\Http\Requests\Mastas\UpdatePlaceRequest;
 //use App\Repositories\Mastas\TempleRepository;
 //use App\Services\Mastas\TempleService;
 use Illuminate\Http\RedirectResponse;
@@ -13,47 +14,47 @@ use Illuminate\View\View;
 
 class TempleController extends Controller
 {
-    //protected $TempleService;
-    //protected $TempleRepository;
+    //protected $templeService;
+    //protected $templeRepository;
 
     public function index()
         {
-            $Temples = Temple::latest()->paginate(10);
-            //$Temples = Temple::select("*")
+            $temples = Temple::latest()->paginate(10);
+            //$temples = Temple::select("*")
             //->orderBy("name_kana")
             //->get();
-            return view('mastas.Temple.index', compact('Temples'))
+            return view('mastas.temple.index', compact('temples'))
                 ->with('i', (request()->input('page', 1) -1) *5);
     }
 
         public function create()
             {
-            return view('mastas.Temple.create');
+            return view('mastas.temple.create');
             }
     
         public function store(TempleRequest $request)
             {
                 Temple::create($request->all());
                 
-                return redirect()->route('Temple.index')
+                return redirect()->route('temple.index')
                 ->with('flash_message', '登録が完了しました');
             }
 /*
-        public function show(Temple $Temple)
+        public function show(Temple $temple)
         {
-            return view('Temple.show', compact('Temples'));
+            return view('temple.show', compact('temples'));
         }
 */                   
         public function edit($id)
-        {  // $TempleId = (int) $request->route('TempleId');
-            $Temple = Temple::where('id', $id)->firstOrfail();
-            return view('mastas.Temple.edit')->with('Temple', $Temple);
+        {  // $templeId = (int) $request->route('templeId');
+            $temple = Temple::where('id', $id)->firstOrfail();
+            return view('mastas.temple.edit')->with('temple', $temple);
         }
-        //フォームリクエストのバリデーションを有効にする為引数(インジェクション)をマスタ名+Requestにしている
-        public function update(TempleRequest $request, Temple $Temple)
+        //フォームリクエストのバリデーションを有効にする為引数(インジェクション)をPlaceRequestにしている
+        public function update(TempleRequest $request, Temple $temple)
         {
-         $Temple = Temple::find($request->id);   
-         $Temple->update([
+         $temple = Temple::find($request->id);   
+         $temple->update([
             "display_order" => $request->display_order,
             "name_kana" => $request->name_kana,
             "name" => $request->name,
@@ -62,14 +63,14 @@ class TempleController extends Controller
             "fax" => $request->fax,
             "other" => $request->other,
          ]);
-        return redirect()->route('Temple.index')
+        return redirect()->route('temple.index')
                     ->with('flash_message', '変更しました');
             }
         public function destroy($id){
-            $Temple = Temple::where('id', $id)->firstOrfail();
-            $Temple->delete($id);
+            $temple = Temple::where('id', $id)->firstOrfail();
+            $temple->delete($id);
 
-            return redirect()->route('Temple.index')
+            return redirect()->route('temple.index')
                     ->with('flash_message', '削除しました');
 
         }

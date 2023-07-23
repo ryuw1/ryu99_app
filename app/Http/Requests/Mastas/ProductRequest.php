@@ -4,7 +4,7 @@ namespace App\Http\Requests\Mastas;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TempleRequest extends FormRequest
+class ProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,10 +23,15 @@ class TempleRequest extends FormRequest
     {
         return [
             'display_order' => 'required|integer',
-            'name_kana' => 'required',
+            'group_by_product_code'  => 'required|integer',
+            'code' => 'required',
             'name' => 'required',
-            'religion_group' => 'required',
-            'tel' => 'required',
+            'unit_price' => 'required|integer',
+            'tax_rate' => 'required',
+            'quantity' => 'required|integer',
+            'unit_orice_including_tax' => 'required|integger',
+            'unit' => 'required',
+            'other' => 'required',
             /*
             'fish_name' => 'required',
             'year' => 'required|integer|between:1990,2018',
@@ -41,10 +46,10 @@ class TempleRequest extends FormRequest
     {
         return [
             'display_order' => '表示順を暫定でも良いので数字で入れてください(1や999など)', 
-            'name_kana' => '寺院の読みがなを入れてください',
-            'name.required' => '寺院の名称を入れてください',
-            'religion_group.required' => '宗旨を入れてください',
-            'tel' => '電話番号を正しく入れてください',
+            'name' => '名称を入力してください',
+            'unit_price' => '単価を入力してください',
+            'tax_rate' => '税率を入力してください',
+            'quantity' => '数量を入力してください',
         ];
     }
 }

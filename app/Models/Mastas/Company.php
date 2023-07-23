@@ -5,19 +5,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagenation\Paginator;
 
-class Temple extends Model
+class Company extends Model
 {
     use HasFactory;
-    protected $table = 'temples'; // テーブル名
+    protected $table = 'companys'; // テーブル名
 
     protected $fillable = [
-        'display_order',
-        'name_kana',
         'name',
-        'religion_group',
+        'postal_code',
+        'adress1',
         'tel',
         'fax',
-        'other',
+        'bank_name',
+        'bank_account',
     ];
 
     // カスタムメソッドを定義する場合は、以下にメソッドを追加します

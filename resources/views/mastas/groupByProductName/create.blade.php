@@ -1,5 +1,5 @@
       <!-- Table Section -->
-      @extends('mastas.layout')
+      @extends('mastas.temple.layout')
       @section('content')
                   <div>
                     <div class="inline-flex gap-x-2">
