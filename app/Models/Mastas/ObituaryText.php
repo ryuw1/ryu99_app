@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagenation\Paginator;
 
-class Obituary_text extends Model
+class ObituaryText extends Model
 {
     use HasFactory;
     protected $table = 'obituary_texts'; // テーブル名

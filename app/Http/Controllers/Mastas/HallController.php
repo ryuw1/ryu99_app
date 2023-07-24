@@ -19,24 +19,24 @@ class HallController extends Controller
 
     public function index()
         {
-            $Halls = Hall::latest()->paginate(10);
+            $halls = Hall::latest()->paginate(10);
             //$Halls = Hall::select("*")
             //->orderBy("name_kana")
             //->get();
-            return view('mastas.Hall.index', compact('Halls'))
+            return view('mastas.hall.index', compact('halls'))
                 ->with('i', (request()->input('page', 1) -1) *5);
     }
 
         public function create()
             {
-            return view('mastas.Hall.create');
+            return view('mastas.hall.create');
             }
     
         public function store(HallRequest $request)
             {
                 Hall::create($request->all());
                 
-                return redirect()->route('Hall.index')
+                return redirect()->route('hall.index')
                 ->with('flash_message', '登録が完了しました');
             }
 /*
@@ -48,7 +48,7 @@ class HallController extends Controller
         public function edit($id)
         {  // $HallId = (int) $request->route('HallId');
             $Hall = Hall::where('id', $id)->firstOrfail();
-            return view('mastas.Hall.edit')->with('Hall', $Hall);
+            return view('mastas.hall.edit')->with('hall', $Hall);
         }
         //フォームリクエストのバリデーションを有効にする為引数(インジェクション)をPlaceRequestにしている
         public function update(HallRequest $request, Hall $Hall)
@@ -64,15 +64,14 @@ class HallController extends Controller
             "fax" => $request->fax,
             "map" => $request->map,
          ]);
-        return redirect()->route('Hall.index')
+        return redirect()->route('hall.index')
                     ->with('flash_message', '変更しました');
             }
         public function destroy($id){
             $Hall = Hall::where('id', $id)->firstOrfail();
             $Hall->delete($id);
 
-            return redirect()->route('Hall.index')
+            return redirect()->route('hall.index')
                     ->with('flash_message', '削除しました');
-
         }
 }

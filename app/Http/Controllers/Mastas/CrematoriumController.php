@@ -19,56 +19,56 @@ class CrematoriumController extends Controller
 
     public function index()
         {
-            $Crematoriums = Crematorium::latest()->paginate(10);
+            $crematoriums = Crematorium::latest()->paginate(10);
             //$Crematoriums = Crematorium::select("*")
             //->orderBy("name_kana")
             //->get();
-            return view('mastas.Crematorium.index', compact('Crematoriums'))
+            return view('mastas.crematorium.index', compact('crematoriums'))
                 ->with('i', (request()->input('page', 1) -1) *5);
     }
 
         public function create()
             {
-            return view('mastas.Crematorium.create');
+            return view('mastas.crematorium.create');
             }
     
         public function store(CrematoriumRequest $request)
             {
                 Crematorium::create($request->all());
                 
-                return redirect()->route('Crematorium.index')
+                return redirect()->route('crematorium.index')
                 ->with('flash_message', '登録が完了しました');
             }
 /*
         public function show(Crematorium $Crematorium)
         {
-            return view('Crematorium.show', compact('Crematoriums'));
+            return view('cematoriumshow', compact('Crematoriums'));
         }
 */                   
         public function edit($id)
         {  // $CrematoriumId = (int) $request->route('CrematoriumId');
-            $Crematorium = Crematorium::where('id', $id)->firstOrfail();
-            return view('mastas.Crematorium.edit')->with('Crematorium', $Crematorium);
+            $crematorium = Crematorium::where('id', $id)->firstOrfail();
+            return view('mastas.crematorium.edit')->with('crematorium', $crematorium);
         }
         //フォームリクエストのバリデーションを有効にする為引数(インジェクション)をPlaceRequestにしている
-        public function update(CrematoriumRequest $request, Crematorium $Crematorium)
+        public function update(CrematoriumRequest $request, Crematorium $crematorium)
         {
-         $Crematorium = Crematorium::find($request->id);   
-         $Crematorium->update([
+         $crematorium = Crematorium::find($request->id);   
+         $crematorium->update([
             "display_order" => $request->display_order,
             "name" => $request->name,
             "tel" => $request->tel,
             "fax" => $request->fax,
             "other" => $request->other,
          ]);
-        return redirect()->route('Crematorium.index')
+        return redirect()->route('crematorium.index')
                     ->with('flash_message', '変更しました');
             }
         public function destroy($id){
-            $Crematorium = Crematorium::where('id', $id)->firstOrfail();
-            $Crematorium->delete($id);
+            $crematorium = Crematorium::where('id', $id)->firstOrfail();
+            $crematorium->delete($id);
 
-            return redirect()->route('Crematorium.index')
+            return redirect()->route('crematorium.index')
                     ->with('flash_message', '削除しました');
 
         }

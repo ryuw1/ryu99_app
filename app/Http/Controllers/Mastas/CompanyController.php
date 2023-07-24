@@ -18,24 +18,24 @@ class CompanyController extends Controller
 
     public function index()
         {
-            $Companys = Company::latest()->paginate(10);
+            $companys = Company::latest()->paginate(10);
             //$Companys = Company::select("*")
             //->orderBy("name_kana")
             //->get();
-            return view('mastas.Company.index', compact('Companys'))
+            return view('mastas.company.index', compact('companys'))
                 ->with('i', (request()->input('page', 1) -1) *5);
     }
 
         public function create()
             {
-            return view('mastas.Company.create');
+            return view('mastas.company.create');
             }
     
         public function store(CompanyRequest $request)
             {
                 Company::create($request->all());
                 
-                return redirect()->route('Company.index')
+                return redirect()->route('company.index')
                 ->with('flash_message', '登録が完了しました');
             }
 /*
@@ -47,7 +47,7 @@ class CompanyController extends Controller
         public function edit($id)
         {  // $CompanyId = (int) $request->route('CompanyId');
             $Company = Company::where('id', $id)->firstOrfail();
-            return view('mastas.Company.edit')->with('Company', $Company);
+            return view('mastas.company.edit')->with('company', $Company);
         }
         //フォームリクエストのバリデーションを有効にする為引数(インジェクション)をPlaceRequestにしている
         public function update(CompanyRequest $request, Company $Company)
@@ -62,14 +62,14 @@ class CompanyController extends Controller
             "bank_name" => $request->bank_name,
             "bank_account" => $request->bank_account,
          ]);
-        return redirect()->route('Company.index')
+        return redirect()->route('company.index')
                     ->with('flash_message', '変更しました');
             }
         public function destroy($id){
             $Company = Company::where('id', $id)->firstOrfail();
             $Company->delete($id);
 
-            return redirect()->route('Company.index')
+            return redirect()->route('company.index')
                     ->with('flash_message', '削除しました');
 
         }

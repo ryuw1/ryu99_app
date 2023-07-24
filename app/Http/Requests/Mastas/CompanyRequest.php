@@ -15,8 +15,8 @@ class CompanyRequest extends FormRequest
         return [
                  'name' => 'required|max:20',
                  'adress1'  => 'required',
-                 'tel' => 'required',
-                 'fax'  => 'required',
+                 'tel' => 'required|integer',
+                 'fax'  => 'required|integer',
                  'bank_name'  => 'required',
                  'bank_account'  => 'required',
         ];

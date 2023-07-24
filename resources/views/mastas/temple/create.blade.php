@@ -1,5 +1,5 @@
       <!-- Table Section -->
-      @extends('mastas.temple.layout')
+      @extends('mastas.layout')
       @section('content')
                   <div>
                     <div class="inline-flex gap-x-2">
@@ -98,38 +98,38 @@
                           @csrf
                         <div class="px-6 py-2">
                           <input type="hidden" name="id" class="form-control" placeholder="" value="">  
-                          <input type="text" name="display_order" size="3" class="form-control" placeholder=""value="">
+                          <input type="text" name="display_order" size="3" class="form-control" placeholder=""value="{{ old('display_order') }}">
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2">
-                            <input type="text" name="name_kana" size="30" class="form-control" placeholder="" value="">
-                            <input type="text" name="name" size="30" class="form-control" placeholder="" value="">
+                            <input type="text" name="name_kana" size="30" class="form-control" placeholder="" value="{{ old('name_kana') }}">
+                            <input type="text" name="name" size="30" class="form-control" placeholder="" value="{{ old('name') }}">
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2">
-                            <input type="text" name="religion_group" size="20" class="form-control" placeholder="" value="">
+                            <input type="text" name="religion_group" size="20" class="form-control" placeholder="" value="{{ old('religion_group') }}">
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2">
                           <span class="text-sm text-gray-600">
-                            <input type="text" name="tel" size="12"  class="form-control" placeholder="" value="">
+                            <input type="text" name="tel" size="12"  class="form-control" placeholder="" value="{{ old('tel') }}">
                           </span>
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2 flex gap-x-1">
                            <span class="text-sm text-gray-600">
-                            <input type="text" name="fax" size="12" class="form-control" placeholder="" value="">
+                            <input type="text" name="fax" size="12" class="form-control" placeholder="" value="{{ old('fax') }}">
                           </span>
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2 flex gap-x-1">
                            <span class="text-sm text-gray-600">
-                            <input type="text" name="other" size="30" class="form-control" placeholder="" value="">
+                            <input type="text" name="other" size="30" class="form-control" placeholder="" value="{{ old('other') }}">
                           </span>
                         </div>
                       </td>

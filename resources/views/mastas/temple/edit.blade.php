@@ -1,5 +1,5 @@
       <!-- Table Section -->
-      @extends('mastas.temple.layout')
+      @extends('mastas.layout')
       @section('content')
                   <div>
                     <div class="inline-flex gap-x-2">
@@ -95,8 +95,6 @@
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
-                  <form method="post" action="{{ route('temple.update', $temple) }}">
-                          @csrf
                         <div class="px-6 py-2">
                           <input type="hidden" name="id" class="form-control" placeholder="" value=" {{ $temple->id }} ">  
                           <input type="text" name="display_order" size="3" class="form-control" placeholder=""value="{{ $temple->display_order }}">

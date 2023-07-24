@@ -1,5 +1,5 @@
       <!-- Table Section -->
-      @extends('mastas.temple.layout')
+      @extends('mastas.layout')
       @section('content')
                   <div>
                     <div class="inline-flex gap-x-2">
@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-lg-12 mt-1 mr-1">
                             <div class="float-left">
-                                <a class="btn btn-primary" href="{{ route('temple.index') }}"> Back</a>
+                                <a class="btn btn-primary" href="{{ route('company.index') }}"> Back</a>
                             </div>
                         </div>    
                 <!-- End Header -->
@@ -39,7 +39,7 @@
                       <th scope="col" class="px-6 py-3 text-center">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
-                            表示順
+                            会社名
                           </span>
                         </div>
                       </th>
@@ -47,8 +47,7 @@
                       <th scope="col" class="px-6 py-3 text-center">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
-                          か　な<br/>  
-                          寺院名
+                          郵便番号
                           </span>
                         </div>
                       </th>
@@ -56,7 +55,7 @@
                       <th scope="col" class="px-6 py-3 text-center">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
-                          宗　旨
+                          住　所
                           </span>
                         </div>
                       </th>
@@ -79,13 +78,20 @@
                       <th scope="col" class="px-6 py-3 text-center">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
-                            その他
+                            銀行名
+                          </span>
+                        </div>
+                      </th>
+                      <th scope="col" class="px-6 py-3 text-center">
+                        <div class="flex items-center gap-x-2">
+                          <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
+                            銀行口座名
                           </span>
                         </div>
                       </th>
                     </tr>
                   </thead>
-                  <form action="{{ route('temple.store') }}" method="POST">
+                  <form action="{{ route('company.store') }}" method="POST">
                     @csrf
                   <tbody class="divide-y divide-gray-200">
                     <tr>
@@ -98,18 +104,17 @@
                           @csrf
                         <div class="px-6 py-2">
                           <input type="hidden" name="id" class="form-control" placeholder="" value="">  
-                          <input type="text" name="display_order" size="3" class="form-control" placeholder=""value="">
+                          <input type="text" name="name" size="3" class="form-control" placeholder=""value="">
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2">
-                            <input type="text" name="name_kana" size="30" class="form-control" placeholder="" value="">
-                            <input type="text" name="name" size="30" class="form-control" placeholder="" value="">
+                            <input type="text" name="postal_code" size="30" class="form-control" placeholder="" value="">
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2">
-                            <input type="text" name="religion_group" size="20" class="form-control" placeholder="" value="">
+                            <input type="text" name="adress1" size="20" class="form-control" placeholder="" value="">
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
@@ -129,7 +134,14 @@
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2 flex gap-x-1">
                            <span class="text-sm text-gray-600">
-                            <input type="text" name="other" size="30" class="form-control" placeholder="" value="">
+                            <input type="text" name="bank_name" size="30" class="form-control" placeholder="" value="">
+                          </span>
+                        </div>
+                      </td>
+                      <td class="h-px w-px whitespace-nowrap">
+                        <div class="px-6 py-2 flex gap-x-1">
+                           <span class="text-sm text-gray-600">
+                            <input type="text" name="bank_account" size="30" class="form-control" placeholder="" value="">
                           </span>
                         </div>
                       </td>

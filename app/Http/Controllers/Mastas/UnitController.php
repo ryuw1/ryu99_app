@@ -19,24 +19,24 @@ class UnitController extends Controller
 
     public function index()
         {
-            $Units = Unit::latest()->paginate(10);
+            $units = Unit::latest()->paginate(10);
             //$Units = Unit::select("*")
             //->orderBy("name_kana")
             //->get();
-            return view('mastas.Unit.index', compact('Units'))
+            return view('mastas.unit.index', compact('units'))
                 ->with('i', (request()->input('page', 1) -1) *5);
     }
 
         public function create()
             {
-            return view('mastas.Unit.create');
+            return view('mastas.unit.create');
             }
     
         public function store(UnitRequest $request)
             {
                 Unit::create($request->all());
                 
-                return redirect()->route('Unit.index')
+                return redirect()->route('unit.index')
                 ->with('flash_message', '登録が完了しました');
             }
 /*
@@ -48,7 +48,7 @@ class UnitController extends Controller
         public function edit($id)
         {  // $UnitId = (int) $request->route('UnitId');
             $Unit = Unit::where('id', $id)->firstOrfail();
-            return view('mastas.Unit.edit')->with('Unit', $Unit);
+            return view('mastas.unit.edit')->with('Unit', $Unit);
         }
         //フォームリクエストのバリデーションを有効にする為引数(インジェクション)をPlaceRequestにしている
         public function update(UnitRequest $request, Unit $Unit)
@@ -58,14 +58,14 @@ class UnitController extends Controller
             "display_order" => $request->display_order,
             "name" => $request->name,
          ]);
-        return redirect()->route('Unit.index')
+        return redirect()->route('unit.index')
                     ->with('flash_message', '変更しました');
             }
         public function destroy($id){
             $Unit = Unit::where('id', $id)->firstOrfail();
             $Unit->delete($id);
 
-            return redirect()->route('Unit.index')
+            return redirect()->route('unit.index')
                     ->with('flash_message', '削除しました');
 
         }

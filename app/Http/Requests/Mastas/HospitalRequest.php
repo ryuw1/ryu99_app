@@ -21,16 +21,13 @@ class HospitalRequest extends FormRequest
      */
     public function rules(): array
     {	
-        [
+        return [
             'display_order' => 'required|integer',
             'area_name' => 'required',	
             'name_kana'	=> 'required',
             'name' => 'required',	
-           // 'postal_code' => 'required',	
             'adress1' => 'required',	
-           // 'adress2' => 'required',	
-            'tel' => 'required',	
-            'fax' => 'required',	
+            'tel' => 'required',
         ];
     }
     public function messages()

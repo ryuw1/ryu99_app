@@ -18,36 +18,36 @@ class TempleController extends Controller
 
     public function index()
         {
-            $Temples = Temple::latest()->paginate(10);
+            $temples = Temple::latest()->paginate(10);
             //$Temples = Temple::select("*")
             //->orderBy("name_kana")
             //->get();
-            return view('mastas.Temple.index', compact('Temples'))
+            return view('mastas.temple.index', compact('temples'))
                 ->with('i', (request()->input('page', 1) -1) *5);
     }
 
         public function create()
             {
-            return view('mastas.Temple.create');
+            return view('mastas.temple.create');
             }
     
         public function store(TempleRequest $request)
             {
                 Temple::create($request->all());
                 
-                return redirect()->route('Temple.index')
+                return redirect()->route('temple.index')
                 ->with('flash_message', '登録が完了しました');
             }
 /*
         public function show(Temple $Temple)
         {
-            return view('Temple.show', compact('Temples'));
+            return view('temple.show', compact('Temples'));
         }
 */                   
         public function edit($id)
         {  // $TempleId = (int) $request->route('TempleId');
             $Temple = Temple::where('id', $id)->firstOrfail();
-            return view('mastas.Temple.edit')->with('Temple', $Temple);
+            return view('mastas.temple.edit')->with('temple', $Temple);
         }
         //フォームリクエストのバリデーションを有効にする為引数(インジェクション)をマスタ名+Requestにしている
         public function update(TempleRequest $request, Temple $Temple)
@@ -62,14 +62,14 @@ class TempleController extends Controller
             "fax" => $request->fax,
             "other" => $request->other,
          ]);
-        return redirect()->route('Temple.index')
+        return redirect()->route('temple.index')
                     ->with('flash_message', '変更しました');
             }
         public function destroy($id){
             $Temple = Temple::where('id', $id)->firstOrfail();
             $Temple->delete($id);
 
-            return redirect()->route('Temple.index')
+            return redirect()->route('temple.index')
                     ->with('flash_message', '削除しました');
 
         }

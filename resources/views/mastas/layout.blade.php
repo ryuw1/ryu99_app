@@ -22,7 +22,6 @@
                     });
                     </script>
     </head>
-    {{ Breadcrumbs::render('about2') }}
       <body class="h-full">
         <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <!-- Card -->
@@ -42,7 +41,5 @@
           </div>
           <!-- 読み込み部分--> 
             @yield('content')<br/>
-          <!-- paginate-->
-            {{ $temples->appends(request()->query())->links('vendor.pagination.tailwind2') }}
        </body>
 </html>

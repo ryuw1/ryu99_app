@@ -5,7 +5,7 @@
         <h2 class="text-xl font-semibold text-gray-800">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;寺院マスタ
           </h2>
-      <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+          <div class="max-w-[85rem] px-4 py-4 sm:px-6 lg:px-8 lg:py-6 mx-auto">
         <!-- Card -->
         <div class="flex flex-col">
           <div class="-m-1.5 overflow-x-auto">
@@ -124,4 +124,6 @@
               </table>        
            
              <!-- End Table Section -->
+               <!-- paginate-->
+            {{ $temples->appends(request()->query())->links('vendor.pagination.tailwind2') }}
              @endsection

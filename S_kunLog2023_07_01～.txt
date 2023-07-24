@@ -372,3 +372,43 @@
 20230722 11:30
 	1.11:30
 	寺院マスタのパンくずリストを整えれば完成で良いと思う。viewのlayout.blade.phpをtempleディレクトリからmastaへ1階層あげて共通化した。
+20230723 14:38
+	1.朝からTempleを元にModel,Controller,view,を書いている。web.phpファイルにControllerのuse文を入れ忘れて2時間も費やす....
+	  座談会が終わってからふたたび作業。layout.bladeにあるpaginate部分で引数が各マスタ個別のデータなので、そこを分ける。
+
+	2.マスタ系で、CRUDの実装が済んだファイル群
+		1.temple 2.company 3. hospital 
+
+	3.crematorium(火葬場)の新規登録画面で、入力フィールドが全て拡縮しない事に気づいた。templeではするので原因を調査して修正をしていく。
+		git add . ば出来るがcommitにエラーが出てそれ以上は進まない。
+
+	4. 22:02
+	 create画面でどこかの値がvalidateに引っ掛かった場合に全部のフォームの入力値が失われて真っ白になる。
+	 これをふせぐ為にvalue="{{ old('xxx')}}"を利用する事にした。
+	5. 深夜になて思いついて、テレビにHDMIで主力し、大きな画面でVSCodeを見てPC側にブラウザを表示するとやっぱりやりやすい。
+20230724 8:43
+
+	1.crematoriumマスタのindexでpaginateがページ数が少ないせいか、右端によって表示されている調整できるものなら後でそうしたい。
+	2.今朝一でかかったGroupByProductでEdit　viewでエラーが出た。同じviewを使っているcrematoriumもだったのでやり直し。
+
+		3.マスタ系で、CRUDの実装が済んだファイル群
+		1.temple 2.company 3. hospital 4.crematorium 5.groupByProduct 6.hall 
+	3.12:03	
+	※　ObituaryText(訃報の本文)については固定としてマスタを持たない方針とする。
+	上記にかかわるファイルをモデル以外は全て削除。
+
+	4.Product(商品マスタ)で使用されていないunitの概念をはずす。
+
+	5.product で　商品分類番号のフィールドは商品分類テーブルからもって来たデータでプルダウン化する。
+		商品コードは最大値+1で自動入力。表示順は廃止。
+
+	6.13:14
+	productのcreateの表示がおかしいまま治せないので再度hospitalからコピーして作り直す所から。	
+
+	7.15:20
+	上記は解決したがproduct/edit.bladeの<form actionの所で書き方が間違えてますよ、というエラー..
+	どこも間違えていないと思うので、リスタート。
+
+	8.16:54
+	RelationshipのEdit,updateで、RelationshipRequest周りがおかしいらしくエラー。とりあえずRequestを
+	validateなしのものに差し替えておく。

@@ -1,0 +1,16 @@
+20230723 11:13
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Changes to be committed:
+#	modified:   app/Http/Controllers/Mastas/CompanyController.php
+#	modified:   app/Http/Controllers/Mastas/TempleController.php
+#	modified:   resources/views/mastas/company/create.blade.php
+#	modified:   resources/views/mastas/company/edit.blade.php
+#	modified:   resources/views/mastas/company/index.blade.php
+#	deleted:    resources/views/mastas/company/layout.blade.php
+#	deleted:    resources/views/mastas/groupByProductName/layout.blade.php
+#	modified:   resources/views/mastas/temple/create.blade.php
+#	modified:   routes/web.php
+#

@@ -1,5 +1,5 @@
       <!-- Table Section -->
-      @extends('mastas.temple.layout')
+      @extends('mastas.layout')
       @section('content')
                   <div>
                     <div class="inline-flex gap-x-2">
@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-lg-12 mt-1 mr-1">
                             <div class="float-left">
-                                <a class="btn btn-primary" href="{{ route('temple.index') }}"> Back</a>
+                                <a class="btn btn-primary" href="{{ route('product.index') }}"> Back</a>
                             </div>
                         </div>    
                 <!-- End Header -->
@@ -39,40 +39,49 @@
                       <th scope="col" class="px-6 py-3 text-center">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
-                            表示順
+                            商品分類
                           </span>
                         </div>
                       </th>
-      
                       <th scope="col" class="px-6 py-3 text-center">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
-                          か　な<br/>  
-                          寺院名
+                          商品コード
                           </span>
                         </div>
                       </th>
-      
                       <th scope="col" class="px-6 py-3 text-center">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
-                          宗　旨
+                          商品名
                           </span>
                         </div>
                       </th>
-      
                       <th scope="col" class="px-6 py-3 text-center">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
-                            TEL
+                          税抜き単価
                           </span>
                         </div>
                       </th>
-      
                       <th scope="col" class="px-6 py-3 text-center">
                         <div class="flex items-center gap-x-2">
                           <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
-                            FAX
+                          税率
+                          </span>
+                        </div>
+                      </th>   
+                      <th scope="col" class="px-6 py-3 text-center">
+                        <div class="flex items-center gap-x-2">
+                          <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
+                          数
+                          </span>
+                        </div>
+                      </th>
+                      <th scope="col" class="px-6 py-3 text-center">
+                        <div class="flex items-center gap-x-2">
+                          <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
+                          税込み単価
                           </span>
                         </div>
                       </th>
@@ -85,7 +94,7 @@
                       </th>
                     </tr>
                   </thead>
-                  <form action="{{ route('temple.store') }}" method="POST">
+                  <form action="{{ route('product.store') }}" method="POST">
                     @csrf
                   <tbody class="divide-y divide-gray-200">
                     <tr>
@@ -97,39 +106,51 @@
                       <td class="h-px w-px whitespace-nowrap">
                           @csrf
                         <div class="px-6 py-2">
-                          <input type="hidden" name="id" class="form-control" placeholder="" value="">  
-                          <input type="text" name="display_order" size="3" class="form-control" placeholder=""value="">
-                        </div>
-                      </td>
-                      <td class="h-px w-px whitespace-nowrap">
-                        <div class="px-6 py-2">
-                            <input type="text" name="name_kana" size="30" class="form-control" placeholder="" value="">
-                            <input type="text" name="name" size="30" class="form-control" placeholder="" value="">
-                        </div>
-                      </td>
-                      <td class="h-px w-px whitespace-nowrap">
-                        <div class="px-6 py-2">
-                            <input type="text" name="religion_group" size="20" class="form-control" placeholder="" value="">
+                          <input type="text" name="group_by_product_code" size="3" class="form-control" placeholder=""value="{{ old('group_by_product_code') }}">
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2">
                           <span class="text-sm text-gray-600">
-                            <input type="text" name="tel" size="12"  class="form-control" placeholder="" value="">
+                            <input type="text" name="code" size="12"  class="form-control" placeholder="" value="{{ old('code') }}">
+                          </span>
+                        </div>
+                      </td>
+                      <td class="h-px w-px whitespace-nowrap">
+                        <div class="px-6 py-2">
+                            <input type="text" name="name" size="30" class="form-control" placeholder="" value="{{ old('name') }}">
+                        </div>
+                      </td>
+                      <td class="h-px w-px whitespace-nowrap">
+                        <div class="px-6 py-2">
+                            <input type="text" name="unit_price" size="20" class="form-control" placeholder="" value="{{ old('unit_price')}}">
+                        </div>
+                      </td>
+                      <td class="h-px w-px whitespace-nowrap">
+                        <div class="px-6 py-2">
+                          <span class="text-sm text-gray-600">
+                            <input type="text" name="tax_rate" size="12"  class="form-control" placeholder="" value="{{ old('tax_rate') }}">
+                          </span>
+                        </div>
+                      </td>
+                      <td class="h-px w-px whitespace-nowrap">
+                        <div class="px-6 py-2">
+                          <span class="text-sm text-gray-600">
+                            <input type="text" name="quantity" size="12"  class="form-control" placeholder="" value="{{ old('quantity') }}">
+                          </span>
+                        </div>
+                      </td>
+                      <td class="h-px w-px whitespace-nowrap">
+                        <div class="px-6 py-2">
+                          <span class="text-sm text-gray-600">
+                            <input type="text" name="unit_price_including_tax" size="12"  class="form-control" placeholder="" value="{{ old('unit_price_including_tax') }}">
                           </span>
                         </div>
                       </td>
                       <td class="h-px w-px whitespace-nowrap">
                         <div class="px-6 py-2 flex gap-x-1">
                            <span class="text-sm text-gray-600">
-                            <input type="text" name="fax" size="12" class="form-control" placeholder="" value="">
-                          </span>
-                        </div>
-                      </td>
-                      <td class="h-px w-px whitespace-nowrap">
-                        <div class="px-6 py-2 flex gap-x-1">
-                           <span class="text-sm text-gray-600">
-                            <input type="text" name="other" size="30" class="form-control" placeholder="" value="">
+                            <input type="text" name="other" size="12" class="form-control" placeholder="" value="{{ old('other') }}">
                           </span>
                         </div>
                       </td>
