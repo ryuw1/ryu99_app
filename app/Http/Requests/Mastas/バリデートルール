@@ -1,0 +1,6 @@
+    'name' => 'required',
+    'age' => 'integer | between:0,150',
+    'sex' => ['max:1', 'regex:/^[男|女]+$/u'],
+
+
+    
