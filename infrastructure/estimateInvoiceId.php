@@ -1,2 +1,3 @@
 <?
-namespace Infrastructure; 
+namespace Infrastructure;
+ 

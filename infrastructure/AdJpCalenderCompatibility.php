@@ -1,5 +1,5 @@
 <?php
-namespace App\Infrastructure;
+namespace Infrastructure;
 //西暦和暦相互変換
 class AdJpCalenderCompatibility
 { 
