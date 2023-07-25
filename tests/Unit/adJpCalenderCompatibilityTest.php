@@ -1,6 +1,8 @@
 <?php
+namespace Tests\Unit;
+
 use PHPUnit\Framework\TestCase;
-use infrastructure\adJapaneseCalenderCompatibility;
+use adJapaneseCalenderCompatibility;
 class adJpCalenderCompatibilityTest extends TestCase
 {
     public function testAdForJp()

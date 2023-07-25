@@ -1,4 +1,5 @@
-<? php
+<?
+namespace Infrastructure;
 //西暦和暦相互変換
 class adJapaneseCalenderCompatibility
 { 
@@ -8,7 +9,7 @@ function adForJp($yyyy,$op) {
         $yaer = substr($yyyy, 0,4);
         $month = substr($yyyy, 5,2);
         $day = substr($yyyy, -2);
-        $ad = $year.$month.$day;
+        $ad = $yaer.$month.$day;
         $ad = (int)$ad;
             switch ($ad) {
                 case $ad >= 20190501:

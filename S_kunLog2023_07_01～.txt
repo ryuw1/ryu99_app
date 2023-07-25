@@ -422,9 +422,10 @@
 		西暦和暦互換クラスを書き換えた。
 	2.9:22
 	テスト用モックのMockeryインストール。Unitテストの習得までしていて納期に間に合うのか・・・
-<<<<<<< HEAD
-=======
 
 	3.21:46
 		上記のテストダブルをGPT4先生に書いてもらい、実行するも指定のディレクトリに入れてuse文で元のファイルを書いてもテスト自体が行われない。
->>>>>>> fe2c076 (20230725 21:49)
+
+	4.22:24
+		テストが行われるようになったが、   FAILED  Tests\Unit\adJpCalenderCompatibilityTest > ad for jp                                                 Error
+  		Class "adJapaneseCalenderCompatibility" not foundのエラーが出ている状態。	
