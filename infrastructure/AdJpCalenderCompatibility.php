@@ -1,7 +1,7 @@
-<?
-namespace Infrastructure;
+<?php
+namespace App\Infrastructure;
 //西暦和暦相互変換
-class adJapaneseCalenderCompatibility
+class AdJpCalenderCompatibility
 { 
 //西暦=>和暦
 function adForJp($yyyy,$op) {
@@ -59,6 +59,8 @@ if($op=='2'){
 return $temp2;
 }
 }
+}
+/*
 //和暦=>西暦
 function jpForAd($jp) {
 // 元号と年の取得
@@ -102,3 +104,4 @@ $year = substr($ware, 4,2 );//年
 return $yy_sei;//西暦のみ返す
  }
 }
+*/

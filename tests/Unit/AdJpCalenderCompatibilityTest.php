@@ -1,13 +1,13 @@
 <?php
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
-use adJapaneseCalenderCompatibility;
-class adJpCalenderCompatibilityTest extends TestCase
+use Tests\TestCase;
+use Infrastructure\AdJpCalenderCompatibility;
+class AdJpCalenderCompatibilityTest extends TestCase
 {
     public function testAdForJp()
     {
-        $calender = new adJapaneseCalenderCompatibility();
+        $calender = new AdJpCalenderCompatibility();
 
         // 令和のテスト
         $this->assertEquals('令和3年05月01日', $calender->adForJp('2023-05-01', '1'));
