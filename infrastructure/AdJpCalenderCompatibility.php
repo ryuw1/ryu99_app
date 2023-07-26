@@ -2,106 +2,55 @@
 namespace Infrastructure;
 //西暦和暦相互変換
 class AdJpCalenderCompatibility
-{ 
-//西暦=>和暦
-function adForJp($yyyy,$op) {
-    //日付まで厳密に区分する081121
-        $yaer = substr($yyyy, 0,4);
-        $month = substr($yyyy, 5,2);
+{
+    // 西暦=>和暦
+    public function adForJp($yyyy, $op) {
+        $year = substr($yyyy, 0, 4);
+        $month = substr($yyyy, 5, 2);
         $day = substr($yyyy, -2);
-        $ad = $yaer.$month.$day;
-        $ad = (int)$ad;
-            switch ($ad) {
-                case $ad >= 20190501:
-                    $gengo_s = "R";
-                    $gengo = "令和";
-                    $y = substr($ad, 0, 4);
-                    $yy_wa = $y - 2018;
-                    break;
-                case $ad >= 19890108:
-                    $gengo_s = "H";
-                    $gengo = "平成";
-                    $y = substr($ad, 0, 4);
-                    $yy_wa = $y - 1988;
-                    break;
-                case $ad >= 19261225:
-                    $gengo_s = "S";
-                    $gengo = "昭和";
-                    $y = substr($ad, 0, 4);
-                    $yy_wa = $y - 1925;
-                    break;
-                case $ad >= 19120730:
-                    $gengo_s = "T";
-                    $gengo = "大正";
-                    $y = substr($ad, 0, 4);
-                    $yy_wa = $y - 1911;
-                    break;
-                case $ad >= 18680000:
-                    $gengo_s = "M";
-                    $gengo = "明治";
-                    $y = substr($ad, 0, 4);
-                    $yy_wa = $y - 1867;
-                    break;
-                default:
-            return FALSE;
+        $ad = (int)($year . $month . $day);
+
+        $eras = [
+            ["start" => 20190501, "symbol" => "R", "name" => "令和", "offset" => 2019],
+            ["start" => 19890108, "symbol" => "H", "name" => "平成", "offset" => 1988],
+            ["start" => 19261225, "symbol" => "S", "name" => "昭和", "offset" => 1925],
+            ["start" => 19120730, "symbol" => "T", "name" => "大正", "offset" => 1911],
+            ["start" => 18680000, "symbol" => "M", "name" => "明治", "offset" => 1867]
+        ];
+
+        foreach ($eras as $era) {
+            if ($ad >= $era["start"]) {
+                $yy_wa = $year - $era["offset"];
+                $yy_wa = ($yy_wa == 1) ? "元" : $yy_wa;
+                $temp = $era["name"] . $yy_wa . "年" . $month . "月" . $day . "日";
+                $temp2 = $era["symbol"] . " " . $yy_wa . " - " . $month . " - " . $day;
+                return ($op == '1') ? $temp : $temp2;
+            }
         }
-if ($yy_wa == 1) {
-$yy_wa = "元";
-}
 
-$temp = $gengo.$yy_wa."年".$month."月".$day."日";
-//if($temp == '昭和45年01月01日'){$temp = '－－--年--月--日';}
-$temp2 = $gengo_s." ".$yy_wa." "."-"." ".$month." "."-"." ".$day;
-if($op=='1'){
-return $temp;
-}
-if($op=='2'){
-return $temp2;
-}
-}
-}
-/*
-//和暦=>西暦
-function jpForAd($jp) {
-// 元号と年の取得
-$wa = substr($ware, 0,4 );//元号
-$year = substr($ware, 4,2 );//年
-
-    switch ($wa) {
-        case $wa == "令和":
-            if ($year == "元") {
-                $year = 1;
-            }
-            $yy_sei = 2018 + $year;
-            break;
-        case $wa == "平成":
-            if ($year == "元") {
-                $year = 1;
-            }
-             $yy_sei = 1988 + $year;
-            break;
-		case $wa == "昭和":
-            if ($year == "元") {
-                $year = 1;
-            }
-             $yy_sei = 1925 + $year;
-            break;
-		case $wa == "大正":
-            if ($year == "元") {
-                $year = 1;
-            }
-             $yy_sei = 1911 + $year;
-            break;		
-		case $wa == "明治":
-            if ($year == "元") {
-                $year = 1;
-            }
-             $yy_sei = 1867 + $year;
-            break;
-        default:
         return FALSE;
+    }
+
+    // 和暦=>西暦
+    public function jpForAd($jp) {
+        $wa = mb_substr($jp, 0, 2); // 元号
+        $year = mb_substr($jp, 2); // 年
+
+        $eras = [
+            ["name" => "令和", "offset" => 2019],
+            ["name" => "平成", "offset" => 1988],
+            ["name" => "昭和", "offset" => 1925],
+            ["name" => "大正", "offset" => 1911],
+            ["name" => "明治", "offset" => 1867]
+        ];
+
+        foreach ($eras as $era) {
+            if ($wa === $era["name"]) {
+                $year = ($year === "元") ? 1 : $year;
+                return $era["offset"] + $year - 1;
             }
-return $yy_sei;//西暦のみ返す
- }
+        }
+
+        return FALSE;
+    }
 }
-*/

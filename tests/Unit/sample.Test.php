@@ -1,4 +1,6 @@
 <?
+namespace Tests\Unit;
+
 require_once 'vendor/autoload.php';
 
 class sampleTest extends PHPUnit_Framework_TestCase
@@ -18,4 +20,3 @@ class sampleTest extends PHPUnit_Framework_TestCase
         $this->assertEquals("Hello foo", $m->Hello('foo'));
     }
 }
-`

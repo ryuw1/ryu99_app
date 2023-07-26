@@ -30,16 +30,14 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "Infrastructure\\": "infrastructure/",
-            "files": ["infrastructure/AdJpCalenderCompatibility.php"]
+            "Infrastructure\\": "infrastructure/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/",
-            "Infrastructure\\": "infrastructure/"
+            "Tests\\": "tests/"
         }
-    },
+        },
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",

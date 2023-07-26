@@ -429,3 +429,34 @@
 	4.22:24
 		テストが行われるようになったが、   FAILED  Tests\Unit\adJpCalenderCompatibilityTest > ad for jp                                                 Error
   		Class "adJapaneseCalenderCompatibility" not foundのエラーが出ている状態。	
+	
+20230726
+	1.11:31
+		GPT4先生に数回聞いたところ、composer.jsonで
+		    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/",
+            "Infrastructure\\": "infrastructure/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+        },
+		ここが正しくなかったためにテスト対象のクラスが読み込まれなかった。
+		やっとテストできると思ったが、
+		  Failed asserting that two strings are equal.
+			-'令和3年05月01日'
+  			+'令和5年05月01日'
+		と出る。令和5年にしろと?
+	
+	2.12:03
+		令和の始まりは2019年5月1日なので、その日付を入れてみると、
+		上記の場合は令和5年であっている。
+		新元号の始まりの年が1年ずつずれて回答された、と本人(GPT4先生)が言っている。
+		testJpForAd()　和暦から西暦のテストでも1年ずつずれている事に
+		phpUnitが気づいたのには少し驚いた。なんにせよ助かるチャーw
+
