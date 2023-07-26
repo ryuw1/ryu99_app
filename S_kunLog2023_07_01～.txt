@@ -460,3 +460,25 @@
 		testJpForAd()　和暦から西暦のテストでも1年ずつずれている事に
 		phpUnitが気づいたのには少し驚いた。なんにせよ助かるチャーw
 
+	3.14:58
+		AgeCalciatorのテストを書いてたが、テスト対象のクラスが読み込まれないというエラーが出ている。
+		午前中の方法で対処したが今回は何故か解決しない...
+
+	4.15:10
+		テストは動かないが、コンソールで確認できるプラグインデバッガーintelephenseによると
+		Datetimeにエラー。ググったところ、use DateTime;の記述が必要との事。
+		同じく
+			new DateInterval()
+			new DatePeriod()
+			を使いたい時は
+			use DateInterval;
+			use DatePeriod;
+		と記述する必要があるようだ。
+
+	5.16:09
+	　   FAILED  Tests\Unit\AgeCalculatorTest > calculate age                                          
+		UnknownTypeExceptionClass or interface "Infrastructure\AgeCalculator" does not exist
+
+		AgeCalculatorTestとWeekdayFromDateTestで同じエラーが出ている。
+		テストの対象を読み込めていないのが原因で、composer.jsonのautoload-devも確認したが
+		まだ解決にはいたらない。
