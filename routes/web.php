@@ -13,6 +13,7 @@ use App\Http\Controllers\Mastas\HospitalController;
 use App\Http\Controllers\Mastas\CompanyController;
 use App\Http\Controllers\Mastas\TempleController;
 use App\Http\Controllers\PostController;
+use Infrastructure\EstimateInvoiceId;
 
 
 /*
@@ -51,6 +52,7 @@ Route::prefix('/mastas/hall/')->group(function () {
     Route::get('/destoy/{id}', [HallController::class, 'destroy'])->name('hall.destroy');
 });
 */
+
 Route::prefix('/mastas/temple/')->group(function () {
     Route::get('/', [TempleController::class, 'index'])->name('temple.index');
     Route::get('/create', [TempleController::class, 'create'])->name('temple.create');
