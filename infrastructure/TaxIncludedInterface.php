@@ -1,7 +1,7 @@
 <?php
 namespace Infrastructure;
 
-interface TaxCalc
+interface TaxIncluded
 {
     //税抜き価格を引数に取り税込み価格を返す
     public function calculateWith10PercentTax(float $price): float;
