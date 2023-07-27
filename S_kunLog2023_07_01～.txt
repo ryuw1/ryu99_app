@@ -482,3 +482,9 @@
 		AgeCalculatorTestとWeekdayFromDateTestで同じエラーが出ている。
 		テストの対象を読み込めていないのが原因で、composer.jsonのautoload-devも確認したが
 		まだ解決にはいたらない。
+
+	6. 18:51
+		AgeCalculatorTestに.php拡張子が付いていないという驚くべき汎ミス発見。
+		→全てのテストを通過した。
+
+		明日以降、UML図の左側のお金の計算系に進む。

@@ -1,0 +1,116 @@
+ディレクトリ例 (Services, Repositories下が管理対象)
+
+app
+┣ Services
+┃ ┣ IXxxService.php
+┃ ┗ Impl
+┃  ┗ XxxService.php
+┣ Repositories
+┃ ┣ IXxxRepository.php
+┃ ┗ Impl
+┗  ┗ XxxRepository.php
+AppServiceProvider.php の実装
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Routing\UrlGenerator;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
+
+use Illuminate\Support\Facades\File;
+use Symfony\Component\Finder\Finder;
+
+/**
+ * Class AppServiceProvider
+ */
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function register()
+    {
+        $dirs = [
+            'Services',
+            'Repositories'
+        ];
+        foreach ($dirs as $dir) {
+            $this->bind($dir);
+        }
+    }
+    /**
+     * bindを行う
+     *
+     * @param string $dir 対象のディレクトリ
+     * @return void
+     */
+    private function bind(string $dir)
+    {
+        $finder = new Finder();
+        $iterator = $finder
+            ->in(app_path().'/'.$dir)
+            ->depth('< 2') // Implディレクトリが含まれないように
+            ->name('I*.php')
+            ->files();
+        foreach ($iterator as $fileinfo) {
+            $filepath = $fileinfo->getPathname();
+            list($interface, $impl) = $this->getBinds($filepath);
+            if (is_null($impl)) {
+                // インターフェイスのみ定義している場合、bindしない
+                continue;
+            }
+
+            $this->app->bind($interface, $impl);
+        }
+    }
+    /**
+     * バインドするインターフェイスと実装クラスのクラスパスを取得する
+     *
+     * @param string $filepath
+     * @return array interface, impl
+     */
+    private function getBinds(string $filepath): array
+    {
+        $fileInfo = pathinfo($filepath);
+
+        $interfaceDir      = $fileInfo['dirname'];
+        $interfaceFileName = $fileInfo['filename'];
+        $interfacePath     = "{$interfaceDir}/{$interfaceFileName}";
+        $interfaceClass    = Str::replace(app_path(), 'App', $interfacePath);
+        $interfaceClass    = Str::replace('/', '\\', $interfaceClass);
+
+        $implDir      = "{$interfaceDir}/Impl";
+        $implFileName = substr($interfaceFileName, 1);
+        $implFilePath = "{$implDir}/{$implFileName}";
+        $implFIlePathWithExtention = "{$implFilePath}.{$fileInfo['extension']}";
+        $implClass    = Str::replace(app_path(), 'App', $implFilePath);
+        $implClass    = Str::replace('/', '\\', $implClass);
+
+        $implClass = File::exists($implFIlePathWithExtention) ? $implClass : null;
+
+        return [$interfaceClass, $implClass];
+    }
+    ・・・
+}
+動作確認
+tinkerでコンテナから取得できるか確認。OK！
+
+php artisan tinker
+>>> app()->make(App\Services\Auth\ILoginService::class);
+=> App\Services\Auth\Impl\LoginService {#4733}
+Controllerクラスで使用する場合
+
+use App\Services\Auth\ILoginService;
+
+class XxxController extends Controller {
+  public function __constructor(ILoginService $loginService)
+  {
+    $this->loginService = $loginService;
+  }
+  public function login(Request $request)
+  {
+    // こんな感じで使える。
+    $this->loginService->login($request->all());
+  }
+}
