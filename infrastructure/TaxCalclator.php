@@ -1,7 +1,7 @@
 <?php
 namespace Infrastructure;
 
-class TaxCalculator implements TaxCalcInterface {
+class TaxCalclator implements TaxCalcInterface {
     //税抜き価格を取り税額をプラスした合計返す
     public function plus10PercentTax(float $price): float {
         return $price * 1.10;

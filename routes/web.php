@@ -12,8 +12,8 @@ use App\Http\Controllers\Mastas\CrematoriumController;
 use App\Http\Controllers\Mastas\HospitalController;
 use App\Http\Controllers\Mastas\CompanyController;
 use App\Http\Controllers\Mastas\TempleController;
+use App\Http\Controllers\TaxController;
 use App\Http\Controllers\PostController;
-use Infrastructure\EstimateInvoiceId;
 
 
 /*
@@ -136,8 +136,7 @@ Route::prefix('/mastas/unit/')->group(function () {
     Route::post('/update/{id}', [UnitController::class,  'update'])->name('unit.update');
     Route::get('/destoy/{id}', [UnitController::class, 'destroy'])->name('unit.destroy');
 });
-
-
+Route::get('/tax', [TaxController::class, 'calculate'])->name('tax.calculate');
 
 /*
 //20230713 resourceとホワイトリストとを使った方法
