@@ -14,6 +14,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(TaxCalcInterface::class,TaxCalclator::class);
+        $this->app->bind(TotalInterface::class,TotalCalclator::class);
     }
 
     /**

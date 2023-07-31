@@ -1,7 +1,7 @@
 <?php
 namespace Infrastructure;
 //西暦和暦相互変換
-class AdJpCalenderCompatibility
+class AdJpCalenderCompatibility implements AdJpCalenderCompatibilityInterface
 {
     // 西暦=>和暦
     public function adForJp($yyyy, $op) {
